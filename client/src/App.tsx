@@ -22,6 +22,7 @@ import {
 import type { Product } from "./types";
 import { useStore } from "./hooks/useStore";
 import { handleImageError } from "./utils/productFallback";
+import { productPath } from "./utils/paths";
 import { ProductCard } from "./components/ProductCard";
 import { errorMessage } from "./services/apiClient";
 import { validateCoupon } from "./services/coupons";
@@ -108,7 +109,7 @@ function Header() {
                 {suggestions.map((p) => (
                   <Link
                     key={p.id}
-                    to={`/product/${p.slug}`}
+                    to={productPath(p.slug)}
                     onClick={() => setQuery("")}
                   >
                     {p.name}
@@ -719,25 +720,50 @@ function ProductPage() {
   const { slug = "" } = useParams();
   const { add, toggleWish, wishlist } = useStore();
   const [product, setProduct] = useState<Product>();
+  const [loading, setLoading] = useState(true);
   const [qty, setQty] = useState(1),
     [size, setSize] = useState("M"),
     [sizeOpen, setSizeOpen] = useState(false),
     [open, setOpen] = useState("");
   const { items } = useCatalog();
   useEffect(() => {
-    getProduct(slug).then(setProduct);
+    getProduct(slug).then((p) => {
+      setProduct(p);
+      setLoading(false);
+    });
   }, [slug]);
-  if (!product)
+
+  if (loading) {
     return (
       <main className="page-shell">
-        <p className="eyebrow">
-          {items.length
-            ? "This piece is not in the collection."
-            : "Loading the collection…"}
-        </p>
-        <Link to="/shop">Return to shop ↗</Link>
+        <div className="product-grid">
+          {[1, 2].map((i) => (
+            <div key={i} className="skeleton" style={{ height: 500 }} />
+          ))}
+        </div>
       </main>
     );
+  }
+
+  if (!product) {
+    return (
+      <main className="page-shell confirmation">
+        <span className="eyebrow">PIECE NOT FOUND</span>
+        <h1>
+          This piece is not in the collection.
+        </h1>
+        <p>The product you are looking for does not exist or has been removed.</p>
+        <Link className="button button-dark" to="/shop">
+          Return to shop ↗
+        </Link>
+      </main>
+    );
+  }
+
+  const firstImage = product.images?.[0] ?? '/images/products/ivory-raw-silk-bandhgala.jpg';
+  const firstColor = product.colors?.[0];
+  const hasPrice = typeof product.price === 'number' && product.price > 0;
+
   return (
     <main className="page-shell product-page">
       <div className="breadcrumb">
@@ -749,7 +775,7 @@ function ProductPage() {
             <div
               className="product-large-art"
               style={
-                { "--garment": product.colors[0]?.hex } as React.CSSProperties
+                { "--garment": firstColor?.hex } as React.CSSProperties
               }
             >
               <span>
@@ -760,7 +786,7 @@ function ProductPage() {
             </div>
             <img
               className="gallery-photo"
-              src={product.images[0]}
+              src={firstImage}
               alt={product.imageAlt ?? product.name}
               width="900"
               height="1100"
@@ -774,17 +800,29 @@ function ProductPage() {
             {product.category} / {product.subcategory}
           </span>
           <h1>{product.name}</h1>
+          {product.isNew && <span className="badge" style={{ marginBottom: 12 }}>New</span>}
+          {product.isBestseller && <span className="badge" style={{ marginBottom: 12, background: '#e8e4da', color: '#333' }}>Bestseller</span>}
           <p>{product.description}</p>
           <div className="detail-rule" />
+          {hasPrice && (
+            <div className="price-row" style={{ marginBottom: 24 }}>
+              <span className="field-label">PRICE</span>
+              <span style={{ font: '400 28px var(--serif)', color: 'var(--ink)' }}>
+                ₹{product.price.toLocaleString("en-IN")}
+              </span>
+            </div>
+          )}
           <span className="field-label">
-            COLOUR — {product.colors[0]?.name}
+            COLOUR — {firstColor?.name ?? 'N/A'}
           </span>
           <div className="swatches">
-            <button
-              aria-label={product.colors[0]?.name}
-              className="swatch selected"
-              style={{ background: product.colors[0]?.hex }}
-            />
+            {firstColor && (
+              <button
+                aria-label={firstColor.name}
+                className="swatch selected"
+                style={{ background: firstColor.hex }}
+              />
+            )}
           </div>
           <div className="size-label">
             <span className="field-label">SELECT SIZE</span>
@@ -793,7 +831,7 @@ function ProductPage() {
             </button>
           </div>
           <div className="size-options">
-            {product.sizes.map((s) => (
+            {(product.sizes ?? []).map((s) => (
               <button
                 className={size === s ? "chosen" : ""}
                 onClick={() => setSize(s)}
@@ -827,7 +865,7 @@ function ProductPage() {
                   slug: product.slug,
                   quantity: qty,
                   size,
-                  color: product.colors[0]?.name || "",
+                  color: firstColor?.name || "",
                 })
               }
             >
@@ -1018,7 +1056,7 @@ function Cart() {
                     }
                   />
                   <div className="cart-description">
-                    <Link to={`/product/${p.slug}`}>
+                    <Link to={productPath(p.slug)}>
                       <strong>{p.name}</strong>
                     </Link>
                     <span>
@@ -1769,12 +1807,13 @@ function Shell() {
   const { toast, cart } = useStore();
   const location = useLocation();
   useEffect(() => {
+    window.scrollTo(0, 0);
     const section =
       location.pathname.split("/").filter(Boolean).at(-1) || "home";
     const title =
       section === "home"
         ? "Noor Tailor — A New Delhi Tailoring House"
-        : `${section.replaceAll("-", " ").replace(/\\b\\w/g, (c) => c.toUpperCase())} | Noor Tailor`;
+        : `${section.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())} | Noor Tailor`;
     document.title = title;
     const description = document.querySelector("meta[name=description]");
     description?.setAttribute(
