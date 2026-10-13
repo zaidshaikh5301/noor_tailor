@@ -1,0 +1,10 @@
+@"
+node_modules/
+dist/
+.env
+*.zip
+client/public/images/products/_originals/
+client/public/images/products/_incoming/
+"@ | Set-Content -Encoding utf8 .gitignore
+
+Get-Content .gitignore
