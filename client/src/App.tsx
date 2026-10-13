@@ -21,7 +21,7 @@ import {
 } from "./services/catalog";
 import type { Product } from "./types";
 import { useStore } from "./hooks/useStore";
-import { productFallbackImage } from "./utils/productFallback";
+import { handleImageError } from "./utils/productFallback";
 import { ProductCard } from "./components/ProductCard";
 import { errorMessage } from "./services/apiClient";
 import { validateCoupon } from "./services/coupons";
@@ -29,7 +29,6 @@ import { buildOrderItems, createOrder } from "./services/orders";
 import { createAppointment } from "./services/appointments";
 import { sendContactMessage } from "./services/contact";
 import "./App.css";
-import type { SyntheticEvent } from "react";
 
 function useCatalog() {
   const [items, setItems] = useState<Product[]>([]),
@@ -49,10 +48,9 @@ function useCatalog() {
   return { items, loading };
 }
 function imageFallback(
-  event: SyntheticEvent<HTMLImageElement>,
+  event: React.SyntheticEvent<HTMLImageElement>,
 ) {
-  const image = event.currentTarget;
-  image.style.visibility = "hidden";
+  handleImageError(event);
 }
 function Header() {
   const { cart, wishlist } = useStore();
@@ -766,10 +764,7 @@ function ProductPage() {
               alt={product.imageAlt ?? product.name}
               width="900"
               height="1100"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = productFallbackImage(product);
-              }}
+              onError={(e) => handleImageError(e, `product:${product.slug}`)}
             />
             <span className="gallery-index">01 / 01</span>
           </div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Product } from '../types'
 import { useStore } from '../hooks/useStore'
-import { productFallbackImage } from '../utils/productFallback'
+import { handleImageError } from '../utils/productFallback'
 
 export function ProductCard({ product }: { product: Product }) {
   const { wishlist, toggleWish } = useStore()
@@ -12,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className={`art-swatch ${product.category.toLowerCase().replace(/\W/g, '')}`} style={{ '--garment': product.colors[0]?.hex } as React.CSSProperties}>
           <span className="art-mark">N</span>
         </div>
-        <img className="product-photo" src={product.images[0]} alt={product.imageAlt ?? product.name} width="600" height="750" loading="lazy" onError={event => { event.currentTarget.onerror = null; event.currentTarget.src = productFallbackImage(product) }} />
+        <img className="product-photo" src={product.images[0]} alt={product.imageAlt ?? product.name} width="600" height="750" loading="lazy" onError={(e) => handleImageError(e, `product:${product.slug}`)} />
         <span className="art-note">NOOR / {product.subcategory.toUpperCase()}</span>
         {product.isNew && <span className="badge">New</span>}
       </Link>
