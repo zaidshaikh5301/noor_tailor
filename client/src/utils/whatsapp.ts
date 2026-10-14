@@ -1,11 +1,19 @@
 import { shopConfig } from '../config/shop';
 
+function cleanPhoneNumber(number: string): string {
+  return number.replace(/[+\s]/g, '');
+}
+
+function isPlaceholderNumber(number: string): boolean {
+  return !number || number === '91XXXXXXXXXX' || number === '+91 XXXX XXXXXX';
+}
+
 export function buildWhatsAppUrl(message: string): { url: string; isPlaceholder: boolean } {
   const number = shopConfig.whatsappNumber;
-  if (!number || number === '91XXXXXXXXXX') {
+  if (isPlaceholderNumber(number)) {
     return { url: '#', isPlaceholder: true };
   }
-  return { url: `https://wa.me/${number}?text=${encodeURIComponent(message)}`, isPlaceholder: false };
+  return { url: `https://wa.me/${cleanPhoneNumber(number)}?text=${encodeURIComponent(message)}`, isPlaceholder: false };
 }
 
 export function openWhatsApp(message: string): void {

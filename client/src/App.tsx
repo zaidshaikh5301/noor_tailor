@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Link,
   NavLink,
@@ -163,8 +163,12 @@ function Footer() {
         <div>
           <span className="eyebrow">Visit the atelier</span>
           <p>
-            {shopConfig.addressLines.join('<br />')}
-            <br />
+            {shopConfig.addressLines.map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
             {shopConfig.openingHours}
           </p>
           <a

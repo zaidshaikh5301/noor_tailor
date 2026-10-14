@@ -25,18 +25,26 @@ export function formatPhone(): string {
   return shopConfig.phone.replace(/\s/g, '');
 }
 
+function isPlaceholderNumber(number: string): boolean {
+  return !number || number === '91XXXXXXXXXX' || number === '+91 XXXX XXXXXX';
+}
+
+function cleanPhoneNumber(number: string): string {
+  return number.replace(/[+\s]/g, '');
+}
+
 export function getWhatsAppUrl(message: string): string {
-  const number = shopConfig.whatsappNumber;
-  if (number === '+91 9737722063' || !number) {
+  const number: string = shopConfig.whatsappNumber as string;
+  if (isPlaceholderNumber(number)) {
     return '#';
   }
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${cleanPhoneNumber(number)}?text=${encodeURIComponent(message)}`;
 }
 
 export function getWhatsAppLink(message: string, _label: string): { url: string; isPlaceholder: boolean } {
-  const number = shopConfig.whatsappNumber;
-  if (number === '+91 9737722063' || !number) {
+  const number: string = shopConfig.whatsappNumber as string;
+  if (isPlaceholderNumber(number)) {
     return { url: '#', isPlaceholder: true };
   }
-  return { url: `https://wa.me/${number}?text=${encodeURIComponent(message)}`, isPlaceholder: false };
+  return { url: `https://wa.me/${cleanPhoneNumber(number)}?text=${encodeURIComponent(message)}`, isPlaceholder: false };
 }
