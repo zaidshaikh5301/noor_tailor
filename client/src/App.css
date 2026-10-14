@@ -6,7 +6,7 @@
   background: var(--green);
   color: #e7e3d7;
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
   display: flex;
@@ -47,7 +47,7 @@
   display: flex;
   gap: 35px;
   margin-left: 4%;
-  font-size: 11px;
+  font-size: 13px;
 }
 .main-nav a,
 .header-link {
@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 11px;
+  font-size: 13px;
 }
 .header-link sup {
   color: var(--brass);
@@ -75,7 +75,7 @@
   border-bottom: 1px solid var(--line);
   background: none;
   padding: 8px 2px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .suggestions {
   position: absolute;
@@ -93,7 +93,7 @@
   gap: 10px;
   padding: 12px;
   border-bottom: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 13px;
 }
 .suggestions span {
   white-space: nowrap;
@@ -115,7 +115,7 @@
   align-self: center;
 }
 .eyebrow {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #827a6b;
@@ -133,7 +133,7 @@
   margin: 26px 0 18px;
 }
 .hero-copy p {
-  font-size: 13px;
+  font-size: 15px;
   color: #d3d2c8;
   margin: 0 0 31px;
 }
@@ -143,7 +143,7 @@
   justify-content: space-between;
   gap: 20px;
   padding: 15px 20px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   border: 1px solid transparent;
   transition:
@@ -242,7 +242,7 @@
   bottom: 22px;
   right: 24px;
   color: #f0ead9;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.18em;
 }
 .intro-band {
@@ -261,7 +261,7 @@
   font-weight: 500;
 }
 .intro-note {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
   color: #817c70;
 }
@@ -283,7 +283,7 @@
   letter-spacing: -0.025em;
 }
 .text-link {
-  font-size: 10px;
+  font-size: 12px;
   border-bottom: 1px solid var(--brass);
   padding-bottom: 6px;
   white-space: nowrap;
@@ -352,7 +352,7 @@
   position: absolute;
   top: 18px;
   left: 18px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.16em;
   color: #fff;
   text-shadow: 0 1px 3px #0005;
@@ -368,10 +368,10 @@
   justify-content: space-between;
 }
 .category-name strong {
-  font: 400 25px var(--serif);
+  font: 400 27px var(--serif);
 }
 .category-name span {
-  font-size: 8px;
+  font-size: 10px;
 }
 .category-name b {
   font-weight: 400;
@@ -424,7 +424,7 @@
 }
 .feature-copy p,
 .measure-copy > p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.9;
   color: #68675e;
   max-width: 320px;
@@ -498,7 +498,7 @@
   color: #57574c;
   bottom: 11px;
   right: 12px;
-  font-size: 7px;
+  font-size: 10px;
 }
 .badge {
   position: absolute;
@@ -507,7 +507,7 @@
   background: var(--paper);
   padding: 6px 8px;
   text-transform: uppercase;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.14em;
 }
 .wish-button {
@@ -532,16 +532,16 @@
   padding: 12px 1px;
 }
 .product-meta > span:first-child {
-  font-size: 8px;
+  font-size: 10px;
   color: #7c786d;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .product-meta strong {
-  font: 400 16px var(--serif);
+  font: 400 18px var(--serif);
 }
 .product-meta .price {
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 2px;
 }
 .dot {
@@ -602,12 +602,12 @@
   gap: 20px;
   border-top: 1px solid var(--line);
   padding: 15px 0;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 .measure-copy li b {
   color: var(--brass);
-  font-size: 9px;
+  font-size: 11px;
 }
 .measure-copy li span {
   color: #777267;
@@ -635,7 +635,7 @@
   margin: 0 auto 21px;
 }
 .quote-credit {
-  font-size: 9px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #767164;
@@ -662,7 +662,7 @@
 .lookbook-title > a {
   display: inline-block;
   margin-top: 12px;
-  font-size: 9px;
+  font-size: 11px;
   border-bottom: 1px solid var(--brass);
   padding-bottom: 6px;
 }
@@ -698,7 +698,7 @@
   position: absolute;
   bottom: 11px;
   left: 11px;
-  font-size: 7px;
+  font-size: 11px;
   color: white;
   letter-spacing: 0.13em;
 }
@@ -738,7 +738,7 @@ footer {
   display: inline-block;
 }
 .footer-top p {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.9;
   color: #b9b8ad;
   margin-top: 18px;
@@ -747,7 +747,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .footer-top .eyebrow {
   color: #b7a67e;
@@ -764,7 +764,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
-  font-size: 8px;
+  font-size: 10px;
   color: #b3b1a7;
 }
 .footer-bottom div {
@@ -782,7 +782,7 @@ footer {
   margin: 12px 0 40px;
 }
 .breadcrumb {
-  font-size: 9px;
+  font-size: 11px;
   color: #807b6f;
   margin-bottom: 40px;
 }
@@ -800,7 +800,7 @@ footer {
   color: #777267;
 }
 .result-count {
-  font-size: 10px;
+  font-size: 12px;
 }
 .shop-toolbar {
   display: flex;
@@ -812,7 +812,7 @@ footer {
 }
 .shop-toolbar input,
 .shop-toolbar select {
-  font-size: 10px;
+  font-size: 12px;
   padding: 11px 10px;
   border: 1px solid var(--line);
   background: transparent;
@@ -824,7 +824,7 @@ footer {
 }
 .filter-chips {
   height: 25px;
-  font-size: 9px;
+  font-size: 11px;
   color: #797569;
   display: flex;
   gap: 12px;
@@ -834,7 +834,7 @@ footer {
   border: 0;
   background: none;
   border-bottom: 1px solid var(--brass);
-  font-size: 9px;
+  font-size: 11px;
 }
 .shop-page .product-art {
   height: clamp(220px, 27vw, 350px);
@@ -916,7 +916,7 @@ footer {
   position: absolute;
   bottom: 17px;
   right: 17px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
 }
 .gallery-thumbs {
@@ -959,7 +959,7 @@ footer {
 }
 .field-label {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   color: #69665d;
 }
@@ -981,7 +981,7 @@ footer {
   margin: 20px 0 10px;
 }
 .size-label .text-link {
-  font-size: 9px;
+  font-size: 11px;
 }
 .size-options {
   display: flex;
@@ -992,7 +992,7 @@ footer {
   height: 40px;
   background: transparent;
   border: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12px;
 }
 .size-options button.chosen {
   background: var(--green);
@@ -1022,7 +1022,7 @@ footer {
   height: 100%;
 }
 .quantity-control span {
-  font-size: 10px;
+  font-size: 12px;
 }
 .add-button {
   flex: 1;
@@ -1036,7 +1036,7 @@ footer {
 .whatsapp-link {
   display: block;
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
   margin: 15px 0;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -1058,7 +1058,7 @@ footer {
   font: 14px "DM Sans";
 }
 .accordion p {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
   color: #747066;
   padding: 0 0 17px;
@@ -1106,7 +1106,7 @@ footer {
   border-collapse: collapse;
   width: 100%;
   margin: 22px 0;
-  font-size: 11px;
+  font-size: 13px;
 }
 .modal td,
 .modal th,
@@ -1147,7 +1147,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .cart-description strong {
   font: 17px var(--serif);
@@ -1171,7 +1171,7 @@ footer {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
-  font-size: 9px;
+  font-size: 11px;
   padding: 4px;
 }
 .summary {
@@ -1189,7 +1189,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  font-size: 10px;
+  font-size: 12px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -1203,17 +1203,17 @@ footer {
   border: 1px solid var(--line);
   background: transparent;
   padding: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .coupon button {
   border: 1px solid var(--green);
   background: var(--green);
   color: white;
-  font-size: 9px;
+  font-size: 11px;
   padding: 0 14px;
 }
 .summary .summary-total {
-  font-size: 13px !important;
+  font-size: 15px !important;
   border: 0 !important;
   margin: 10px 0;
 }
@@ -1222,7 +1222,7 @@ footer {
   margin: 5px 0;
 }
 .summary > p {
-  font-size: 9px;
+  font-size: 11px;
   color: #777;
   margin: 12px 0 0;
 }
@@ -1242,7 +1242,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  font-size: 9px;
+  font-size: 11px;
   color: #67645b;
 }
 .checkout-form label input,
@@ -1251,6 +1251,7 @@ footer {
   padding: 12px;
   border: 1px solid var(--line);
   background: transparent;
+  font-size: 14px;
 }
 .checkout-form .wide {
   grid-column: span 2;
@@ -1269,13 +1270,13 @@ footer {
 .delivery-choice span {
   grid-column: 2;
   color: #777;
-  font-size: 9px;
+  font-size: 11px;
 }
 .checkout-form > .button {
   margin-top: 19px;
 }
 .small-note {
-  font-size: 9px;
+  font-size: 11px;
   color: #777;
 }
 .form-error {
@@ -1314,7 +1315,7 @@ footer {
   color: #716d62;
 }
 .tailoring-meta {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   line-height: 2;
   color: #817968;
@@ -1326,7 +1327,7 @@ footer {
   height: fit-content;
 }
 .step-count {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.17em;
   border-bottom: 1px solid var(--line);
   padding-bottom: 15px;
@@ -1353,7 +1354,7 @@ footer {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
-  font-size: 9px;
+  font-size: 11px;
 }
 .success-panel h2 {
   font: 28px var(--serif);
@@ -1385,7 +1386,7 @@ footer {
   padding-top: 28px;
 }
 .about-values > div > span {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--brass);
 }
 .about-values h2 {
@@ -1448,7 +1449,7 @@ footer {
   background: var(--green);
   color: white;
   padding: 14px 20px;
-  font-size: 10px;
+  font-size: 12px;
   box-shadow: 0 8px 28px #0002;
   animation: toast-in 0.25s ease-out;
 }
@@ -1470,6 +1471,15 @@ footer {
 }
 .mobile-bag {
   display: none;
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 35;
+  background: var(--green);
+  color: white;
+  padding: 12px 17px;
+  font-size: 12px;
+  box-shadow: 0 5px 18px #0002;
 }
 @media (max-width: 950px) {
   .main-nav {
@@ -1533,7 +1543,7 @@ footer {
   }
   .announcement {
     height: 29px;
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 0.08em;
   }
   .site-header {
@@ -1545,7 +1555,7 @@ footer {
     border: 0;
     background: none;
     padding: 8px 0;
-    font-size: 9px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
@@ -1553,7 +1563,7 @@ footer {
     font-size: 20px;
   }
   .wordmark small {
-    font-size: 6px;
+    font-size: 10px;
     margin-top: 5px;
   }
   .main-nav {
@@ -1590,7 +1600,7 @@ footer {
     border-bottom: 1px solid var(--line);
   }
   .header-link {
-    font-size: 9px;
+    font-size: 11px;
   }
   .header-link:first-of-type {
     display: none;
@@ -1641,7 +1651,7 @@ footer {
     font-size: 31px;
   }
   .section-heading .text-link {
-    font-size: 8px;
+    font-size: 10px;
   }
   .category-grid {
     grid-template-columns: 1fr 1fr;
@@ -1665,12 +1675,12 @@ footer {
     display: block;
   }
   .category-name span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .category-number {
     top: 12px;
     left: 11px;
-    font-size: 7px;
+    font-size: 10px;
   }
   .tile-garment {
     width: 52%;
@@ -1690,7 +1700,7 @@ footer {
     display: none;
   }
   .feature-copy p {
-    font-size: 11px;
+    font-size: 12px;
   }
   .products-section {
     padding-top: 60px;
@@ -1707,13 +1717,13 @@ footer {
     padding-top: 9px;
   }
   .product-meta > span:first-child {
-    font-size: 7px;
+    font-size: 10px;
   }
   .product-meta strong {
-    font-size: 14px;
+    font-size: 16px;
   }
   .product-meta .price {
-    font-size: 10px;
+    font-size: 12px;
   }
   .wish-button {
     right: 8px;
@@ -1743,7 +1753,7 @@ footer {
     font-size: 22px;
   }
   .quote-credit {
-    font-size: 7px;
+    font-size: 11px;
   }
   .lookbook {
     padding: 50px 5%;
@@ -1760,7 +1770,7 @@ footer {
     height: 205px;
   }
   .lookbook-image span {
-    font-size: 6px;
+    font-size: 10px;
   }
   .visit-banner {
     padding: 45px 7%;
@@ -1771,7 +1781,7 @@ footer {
     font-size: 40px;
   }
   .visit-banner p {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0 0 22px;
   }
   .visit-banner .button {
@@ -1788,13 +1798,13 @@ footer {
     grid-column: span 2;
   }
   .footer-top p {
-    font-size: 9px;
+    font-size: 11px;
   }
   .footer-top > div:nth-child(n + 2) {
     gap: 10px;
   }
   .footer-bottom {
-    font-size: 7px;
+    font-size: 11px;
   }
   .page-shell {
     padding: 40px 5% 70px;
@@ -1813,7 +1823,7 @@ footer {
     font-size: 14px;
   }
   .result-count {
-    font-size: 9px;
+    font-size: 11px;
     white-space: nowrap;
   }
   .shop-toolbar {
@@ -1828,7 +1838,7 @@ footer {
   .shop-toolbar input,
   .shop-toolbar select {
     min-width: 0;
-    font-size: 9px;
+    font-size: 11px;
     padding: 10px 7px;
   }
   .shop-page .product-art {
@@ -1876,7 +1886,7 @@ footer {
     font-size: 15px;
   }
   .remove-link {
-    font-size: 8px;
+    font-size: 10px;
   }
   .summary {
     padding: 18px;
@@ -1945,7 +1955,7 @@ footer {
     background: var(--green);
     color: white;
     padding: 12px 17px;
-    font-size: 10px;
+    font-size: 12px;
     box-shadow: 0 5px 18px #0002;
   }
   .toast {
