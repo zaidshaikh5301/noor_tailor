@@ -4,7 +4,7 @@ export const shopConfig = {
   whatsappNumber: '+91 9737722063', // TODO: replace with actual WhatsApp number in international format (digits only)
   phone: '+91 9737722063', // TODO: replace
   email: 'hello@noortailor.com', // TODO: replace
-  addressLines: ['Masjid Fadiya, Near Tower', 'Vansda, Gujarat'], // TODO: replace
+  addressLines: ['Masjid Fariya, Near Tower', 'Vansda, Gujarat'], // TODO: replace
   city: 'Vansda',
   state: 'Gujarat',
   pincode: '388620', // TODO: replace
