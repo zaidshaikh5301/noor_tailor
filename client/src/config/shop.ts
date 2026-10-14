@@ -1,10 +1,10 @@
 export const shopConfig = {
   name: 'Noor Tailor',
   tagline: 'A Tailoring House',
-  whatsappNumber: '91XXXXXXXXXX', // TODO: replace with actual WhatsApp number in international format (digits only)
-  phone: '+91 XXXX XXXXXX', // TODO: replace
+  whatsappNumber: '+91 9737722063', // TODO: replace with actual WhatsApp number in international format (digits only)
+  phone: '+91 9737722063', // TODO: replace
   email: 'hello@noortailor.com', // TODO: replace
-  addressLines: ['Nava Fadiya, Near Tower', 'Vansda, Gujarat'], // TODO: replace
+  addressLines: ['Masjid Fadiya, Near Tower', 'Vansda, Gujarat'], // TODO: replace
   city: 'Vansda',
   state: 'Gujarat',
   pincode: '388620', // TODO: replace
@@ -27,7 +27,7 @@ export function formatPhone(): string {
 
 export function getWhatsAppUrl(message: string): string {
   const number = shopConfig.whatsappNumber;
-  if (number === '91XXXXXXXXXX' || !number) {
+  if (number === '+91 9737722063' || !number) {
     return '#';
   }
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
@@ -35,7 +35,7 @@ export function getWhatsAppUrl(message: string): string {
 
 export function getWhatsAppLink(message: string, _label: string): { url: string; isPlaceholder: boolean } {
   const number = shopConfig.whatsappNumber;
-  if (number === '91XXXXXXXXXX' || !number) {
+  if (number === '+91 9737722063' || !number) {
     return { url: '#', isPlaceholder: true };
   }
   return { url: `https://wa.me/${number}?text=${encodeURIComponent(message)}`, isPlaceholder: false };
