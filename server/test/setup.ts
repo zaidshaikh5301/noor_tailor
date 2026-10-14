@@ -72,7 +72,7 @@ export const validOrderPayload = {
     phone: "+91 9876543210",
   },
   address: {
-    line1: "12 Nava Fadiya",
+    line1: "Masjid Fariya, Near Tower",
     city: "Vansda",
     state: "Gujarat",
     pincode: "388620",

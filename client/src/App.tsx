@@ -1818,7 +1818,7 @@ function ContentPage({ type }: { type: string }) {
   > = {
     about: {
       label: "OUR HOUSE",
-      title: "A tailoring house, since 1987.",
+      title: "A tailoring house.",
       copy: "Noor began with a simple belief: a well-made garment should feel like it belongs to you. From our New Delhi atelier, we bring considered cloth, patient craft and a modern understanding of fit to the clothes men wear for their most meaningful days.",
     },
     contact: {
