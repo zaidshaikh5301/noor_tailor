@@ -1,4 +1,4 @@
-import { apiPost } from './apiClient';
+import { apiPost, USE_API } from './apiClient';
 
 export type ContactMessagePayload = {
   name: string;
@@ -14,8 +14,17 @@ export type ContactMessageResult = {
   createdAt: string;
 };
 
-export function sendContactMessage(
+export async function sendContactMessage(
   payload: ContactMessagePayload,
 ): Promise<ContactMessageResult> {
+  if (!USE_API) {
+    return {
+      id: `MSG-${Date.now()}`,
+      name: payload.name,
+      email: payload.email,
+      message: payload.message,
+      createdAt: new Date().toISOString(),
+    };
+  }
   return apiPost<ContactMessageResult>('/api/contact', payload);
 }

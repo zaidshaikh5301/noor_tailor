@@ -1,4 +1,4 @@
-import { apiGet, apiPost } from './apiClient';
+import { apiGet, apiPost, USE_API } from './apiClient';
 import type { Product } from '../types';
 
 export type OrderItemPayload = {
@@ -53,10 +53,30 @@ export function buildOrderItems(
   });
 }
 
-export function createOrder(payload: OrderPayload): Promise<OrderResult> {
+export async function createOrder(payload: OrderPayload): Promise<OrderResult> {
+  if (!USE_API) {
+    // Mock order creation for local development
+    const subtotal = payload.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const discount = payload.couponCode === 'NOOR10' ? Math.round(subtotal * 0.1) : 0;
+    return {
+      id: `ORD-${Date.now()}`,
+      items: payload.items,
+      customer: payload.customer,
+      address: payload.address,
+      couponCode: payload.couponCode,
+      discount,
+      subtotal,
+      total: subtotal - discount,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+    };
+  }
   return apiPost<OrderResult>('/api/orders', payload);
 }
 
-export function getOrder(id: string): Promise<OrderResult> {
+export async function getOrder(id: string): Promise<OrderResult> {
+  if (!USE_API) {
+    throw new Error('Order lookup not available in local mode');
+  }
   return apiGet<OrderResult>(`/api/orders/${encodeURIComponent(id)}`);
 }

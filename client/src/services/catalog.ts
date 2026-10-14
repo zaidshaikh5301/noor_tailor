@@ -1,11 +1,11 @@
-import { apiGet, ApiRequestError } from './apiClient';
+import { apiGet, ApiRequestError, USE_API } from './apiClient';
 import { products } from '../data/products';
 import { faqs } from '../data/faqs';
 import { categories } from '../data/categories';
 import { collections } from '../data/collections';
 import { testimonials } from '../data/testimonials';
-import { storeInfo } from '../data/storeInfo';
 import { productPhotos } from '../data/productPhotos';
+import { shopConfig } from '../config/shop';
 import type { Product } from '../types';
 
 type ProductListPayload = {
@@ -23,6 +23,9 @@ export function withPhoto(product: Product): Product {
 }
 
 export async function getProducts(): Promise<Product[]> {
+  if (!USE_API) {
+    return products.map(withPhoto);
+  }
   try {
     const data = await apiGet<ProductListPayload>('/api/products?limit=200');
     return data.items.map(withPhoto);
@@ -32,6 +35,10 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function getProduct(slug: string): Promise<Product | undefined> {
+  if (!USE_API) {
+    const local = products.find((item) => item.slug === slug);
+    return local ? withPhoto(local) : undefined;
+  }
   try {
     const product = await apiGet<Product>(`/api/products/${encodeURIComponent(slug)}`);
     return product ? withPhoto(product) : undefined;
@@ -43,6 +50,9 @@ export async function getProduct(slug: string): Promise<Product | undefined> {
 }
 
 export async function getFaqs(): Promise<Faq[]> {
+  if (!USE_API) {
+    return faqs;
+  }
   try {
     return await apiGet<Faq[]>('/api/content/faqs');
   } catch {
@@ -67,4 +77,4 @@ export const homeCategoryImages = {
   Wedding: productPhotos['wine-embroidered-sherwani'],
 };
 
-export { categories, collections, testimonials, storeInfo };
+export { categories, collections, testimonials, shopConfig };

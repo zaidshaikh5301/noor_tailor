@@ -1,10 +1,44 @@
-@"
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
+dist-ssr/
+build/
+
+# Environment files
 .env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archives
 *.zip
+
+# Image optimization
 client/public/images/products/_originals/
 client/public/images/products/_incoming/
-"@ | Set-Content -Encoding utf8 .gitignore
 
-Get-Content .gitignore
+# Generated files
+client/public/sitemap.xml
+client/public/images/optimization-manifest.json
+client/public/og-image.jpg

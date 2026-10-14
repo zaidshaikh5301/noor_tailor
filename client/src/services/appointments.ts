@@ -1,4 +1,4 @@
-import { apiPost } from './apiClient';
+import { apiPost, USE_API } from './apiClient';
 
 export type AppointmentPayload = {
   garmentType: string;
@@ -21,8 +21,19 @@ export type AppointmentResult = {
   createdAt: string;
 };
 
-export function createAppointment(
+export async function createAppointment(
   payload: AppointmentPayload,
 ): Promise<AppointmentResult> {
+  if (!USE_API) {
+    return {
+      id: `APT-${Date.now()}`,
+      garmentType: payload.garmentType,
+      occasion: payload.occasion,
+      preferredDate: payload.preferredDate,
+      contactMethod: payload.contactMethod,
+      status: 'requested',
+      createdAt: new Date().toISOString(),
+    };
+  }
   return apiPost<AppointmentResult>('/api/appointments', payload);
 }

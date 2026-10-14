@@ -1,6 +1,8 @@
 const RAW_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
 export const API_BASE_URL = RAW_BASE.replace(/\/+$/, '');
 
+export const USE_API = import.meta.env.VITE_USE_API === 'true';
+
 export class ApiRequestError extends Error {
   status: number;
   details?: unknown;
@@ -19,6 +21,10 @@ export async function apiRequest<T>(
   path: string,
   init: RequestInit = {},
 ): Promise<T> {
+  if (!USE_API) {
+    throw new ApiRequestError('API disabled; use local mock data', 0);
+  }
+
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
     headers: {

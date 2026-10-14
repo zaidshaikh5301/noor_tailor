@@ -7,12 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
 
-# Editor directories and files
+# Build outputs
+dist/
+dist-ssr/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,16 +32,14 @@ dist-ssr
 *.sln
 *.sw?
 
-node_modules/
-.env
-.env.local
-dist/
-build/
+# Archives
+*.zip
 
-node_modules/
-.env
-.env.local
-dist/
-build/
-.DS_Store
-Thumbs.db
+# Image optimization
+public/images/products/_originals/
+public/images/products/_incoming/
+
+# Generated files
+public/sitemap.xml
+public/images/optimization-manifest.json
+public/og-image.jpg

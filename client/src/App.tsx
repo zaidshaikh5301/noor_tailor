@@ -16,7 +16,7 @@ import {
   getProduct,
   getProducts,
   homeCategoryImages,
-  storeInfo,
+  shopConfig,
   testimonials,
 } from "./services/catalog";
 import type { Product } from "./types";
@@ -26,9 +26,10 @@ import { productPath } from "./utils/paths";
 import { ProductCard } from "./components/ProductCard";
 import { errorMessage } from "./services/apiClient";
 import { validateCoupon } from "./services/coupons";
-import { buildOrderItems, createOrder } from "./services/orders";
 import { createAppointment } from "./services/appointments";
 import { sendContactMessage } from "./services/contact";
+import { buildWhatsAppUrl, buildOrderWhatsAppMessage, buildProductEnquiryMessage, buildAppointmentWhatsAppMessage, buildContactWhatsAppMessage } from "./utils/whatsapp";
+import { getWebPPath, getThumbnailPath } from "./utils/imagePaths";
 import "./App.css";
 
 function useCatalog() {
@@ -133,6 +134,7 @@ function Header() {
   );
 }
 function Footer() {
+  const whatsappLink = buildWhatsAppUrl(`Hello ${shopConfig.name}, I would like to get in touch.`);
   return (
     <footer>
       <div className="footer-top">
@@ -143,7 +145,7 @@ function Footer() {
           <p>
             Clothes with a sense of occasion.
             <br />
-            Made with care in New Delhi.
+            Made with care in {shopConfig.city}, {shopConfig.state}.
           </p>
         </div>
         <div>
@@ -161,26 +163,27 @@ function Footer() {
         <div>
           <span className="eyebrow">Visit the atelier</span>
           <p>
-            {storeInfo.address}
+            {shopConfig.addressLines.join('<br />')}
             <br />
-            {storeInfo.hours}
+            {shopConfig.openingHours}
           </p>
           <a
-            href={`https://wa.me/${storeInfo.whatsapp}`}
+            href={whatsappLink.url}
             target="_blank"
             rel="noreferrer"
+            className={whatsappLink.isPlaceholder ? 'placeholder' : ''}
           >
-            WhatsApp the atelier ↗
+            {whatsappLink.isPlaceholder ? 'WhatsApp (number not configured)' : 'WhatsApp the atelier ↗'}
           </a>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© Noor Tailor 2026</span>
+        <span>© {shopConfig.name} 2026</span>
         <div>
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
         </div>
-        <span>New Delhi, India</span>
+        <span>{shopConfig.city}, {shopConfig.state}</span>
       </div>
     </footer>
   );
@@ -203,15 +206,20 @@ function Home() {
           </Link>
         </div>
         <div className="hero-visual">
-<img
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.groom)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.groom)} type="image/webp" />
+            <img
               className="hero-photo"
               src={editorialImages.groom}
               alt="Indian groom in an ivory wedding outfit and turban, photographed outdoors"
               width="1200"
               height="900"
               fetchPriority="high"
+              loading="eager"
               onError={imageFallback}
             />
+          </picture>
           <div className="hero-caption">
             THE WEDDING EDIT &nbsp; / &nbsp; 2026
           </div>
@@ -248,19 +256,17 @@ function Home() {
               className={`category-tile tile-${i + 1}`}
             >
               <span className="category-number">0{i + 1} / COLLECTION</span>
-<img
+              <picture>
+                <source srcSet={getThumbnailPath(homeCategoryImages[c.name as keyof typeof homeCategoryImages]?.src || '')} media="(max-width: 600px)" type="image/webp" />
+                <source srcSet={getWebPPath(homeCategoryImages[c.name as keyof typeof homeCategoryImages]?.src || '')} type="image/webp" />
+                <img
                   className="category-photo"
-                  src={
-                    homeCategoryImages[c.name as keyof typeof homeCategoryImages]
-                      ?.src
-                  }
-                  alt={
-                    homeCategoryImages[c.name as keyof typeof homeCategoryImages]
-                      ?.alt ?? c.name
-                  }
+                  src={homeCategoryImages[c.name as keyof typeof homeCategoryImages]?.src || ''}
+                  alt={homeCategoryImages[c.name as keyof typeof homeCategoryImages]?.alt ?? c.name}
                   loading="lazy"
                   onError={imageFallback}
                 />
+              </picture>
               <div className="category-name">
                 <strong>{c.name}</strong>
                 <span>
@@ -273,13 +279,17 @@ function Home() {
       </section>
       <section className="wedding-feature">
         <div className="feature-art">
-<img
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.featureWedding)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.featureWedding)} type="image/webp" />
+            <img
               className="feature-photo"
               src={editorialImages.featureWedding}
               alt="Groom wearing an embroidered maroon sherwani"
               loading="lazy"
               onError={imageFallback}
             />
+          </picture>
           <span className="art-note">A STUDY IN FORM / 01</span>
         </div>
         <div className="feature-copy">
@@ -315,13 +325,17 @@ function Home() {
       </section>
       <section className="measure-band">
         <div className="measure-photo">
-<img
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.tailoring)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.tailoring)} type="image/webp" />
+            <img
               className="measure-photo-image"
               src={editorialImages.tailoring}
               alt="Tailor taking measurements for a fitted suit in an atelier"
               loading="lazy"
               onError={imageFallback}
             />
+          </picture>
           <span className="art-note">A FITTING AT THE ATELIER</span>
         </div>
         <div className="measure-copy">
@@ -393,11 +407,14 @@ function Home() {
         <div className="lookbook-title">
           <span className="eyebrow">A FEW MOMENTS IN NOOR</span>
           <h2>Worn in good company.</h2>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
+          <a href={shopConfig.instagramUrl} target="_blank" rel="noreferrer">
             Follow along on Instagram ↗
           </a>
         </div>
-<div className="lookbook-image look-1">
+        <div className="lookbook-image look-1">
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.lookbookGroom)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.lookbookGroom)} type="image/webp" />
             <img
               src={editorialImages.lookbookGroom}
               alt="Groom in ivory traditional wedding wear"
@@ -406,9 +423,13 @@ function Home() {
               loading="lazy"
               onError={imageFallback}
             />
-            <span>01 / BEFORE THE CEREMONY</span>
-          </div>
-          <div className="lookbook-image look-2">
+          </picture>
+          <span>01 / BEFORE THE CEREMONY</span>
+        </div>
+        <div className="lookbook-image look-2">
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.kurtas)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.kurtas)} type="image/webp" />
             <img
               src={editorialImages.kurtas}
               alt="Models in colorful embroidered kurta pajama sets"
@@ -417,9 +438,13 @@ function Home() {
               loading="lazy"
               onError={imageFallback}
             />
-            <span>02 / THE LAST FITTING</span>
-          </div>
-          <div className="lookbook-image look-3">
+          </picture>
+          <span>02 / THE LAST FITTING</span>
+        </div>
+        <div className="lookbook-image look-3">
+          <picture>
+            <source srcSet={getThumbnailPath(editorialImages.lookbookEvening)} media="(max-width: 600px)" type="image/webp" />
+            <source srcSet={getWebPPath(editorialImages.lookbookEvening)} type="image/webp" />
             <img
               src={editorialImages.lookbookEvening}
               alt="Model wearing a deep green velvet blazer"
@@ -428,8 +453,9 @@ function Home() {
               loading="lazy"
               onError={imageFallback}
             />
-            <span>03 / AFTER HOURS</span>
-          </div>
+          </picture>
+          <span>03 / AFTER HOURS</span>
+        </div>
       </section>
       <VisitBanner />
     </>
@@ -764,6 +790,17 @@ function ProductPage() {
   const firstColor = product.colors?.[0];
   const hasPrice = typeof product.price === 'number' && product.price > 0;
 
+  const productEnquiryMessage = buildProductEnquiryMessage({
+    productName: product.name,
+    size: size,
+    color: firstColor?.name || 'N/A',
+    pageUrl: `${location.origin}/product/${product.slug}`,
+  });
+  const productEnquiry = buildWhatsAppUrl(productEnquiryMessage);
+
+  const heroWebP = getWebPPath(firstImage);
+  const heroThumb = getThumbnailPath(firstImage);
+
   return (
     <main className="page-shell product-page">
       <div className="breadcrumb">
@@ -784,14 +821,20 @@ function ProductPage() {
                 ATELIER
               </span>
             </div>
-            <img
-              className="gallery-photo"
-              src={firstImage}
-              alt={product.imageAlt ?? product.name}
-              width="900"
-              height="1100"
-              onError={(e) => handleImageError(e, `product:${product.slug}`)}
-            />
+            <picture>
+              <source srcSet={heroThumb} media="(max-width: 600px)" type="image/webp" />
+              <source srcSet={heroWebP} type="image/webp" />
+              <img
+                className="gallery-photo"
+                src={firstImage}
+                alt={product.imageAlt ?? product.name}
+                width="900"
+                height="1100"
+                loading="eager"
+                fetchPriority="high"
+                onError={(e) => handleImageError(e, `product:${product.slug}`)}
+              />
+            </picture>
             <span className="gallery-index">01 / 01</span>
           </div>
         </div>
@@ -809,6 +852,14 @@ function ProductPage() {
               <span className="field-label">PRICE</span>
               <span style={{ font: '400 28px var(--serif)', color: 'var(--ink)' }}>
                 ₹{product.price.toLocaleString("en-IN")}
+              </span>
+            </div>
+          )}
+          {!hasPrice && (
+            <div className="price-row" style={{ marginBottom: 24 }}>
+              <span className="field-label">PRICE</span>
+              <span style={{ font: '400 28px var(--serif)', color: 'var(--ink)' }}>
+                Price on request
               </span>
             </div>
           )}
@@ -883,9 +934,10 @@ function ProductPage() {
             className="whatsapp-link"
             target="_blank"
             rel="noreferrer"
-            href={`https://wa.me/${storeInfo.whatsapp}?text=${encodeURIComponent(`Hello Noor Tailor, I would like to enquire about ${product.name}: ${location.origin}/product/${product.slug}`)}`}
+            href={productEnquiry.url}
+            aria-label={productEnquiry.isPlaceholder ? 'WhatsApp number not configured' : `Enquire about ${product.name} on WhatsApp`}
           >
-            Enquire about this outfit on WhatsApp ↗
+            {productEnquiry.isPlaceholder ? 'Enquire on WhatsApp (number not configured)' : 'Enquire about this outfit on WhatsApp ↗'}
           </a>
           <div className="detail-rule" />
           {[
@@ -916,14 +968,22 @@ function ProductPage() {
             description: product.description,
             image: product.images,
             sku: product.id,
-            offers: {
-              "@type": "Offer",
-              priceCurrency: "INR",
-              price: product.price,
-              availability: product.inStock
-                ? "https://schema.org/InStock"
-                : "https://schema.org/OutOfStock",
-            },
+            offers: hasPrice
+              ? {
+                  "@type": "Offer",
+                  priceCurrency: "INR",
+                  price: product.price,
+                  availability: product.inStock
+                    ? "https://schema.org/InStock"
+                    : "https://schema.org/OutOfStock",
+                }
+              : {
+                  "@type": "Offer",
+                  priceCurrency: "INR",
+                  availability: product.inStock
+                    ? "https://schema.org/InStock"
+                    : "https://schema.org/OutOfStock",
+                },
           }),
         }}
       />
@@ -1011,6 +1071,9 @@ function Cart() {
       sum + (items.find((p) => p.slug === l.slug)?.price || 0) * l.quantity,
     0,
   );
+  const hasPriceUnknown = cart.some(
+    (l) => (items.find((p) => p.slug === l.slug)?.price || 0) === 0
+  );
   const discount = Math.round((subtotal * discountPercent) / 100);
   const [coupon, setCoupon] = useState(couponCode);
   const [checking, setChecking] = useState(false);
@@ -1047,6 +1110,7 @@ function Cart() {
             {cart.map((line) => {
               const p = items.find((x) => x.slug === line.slug);
               if (!p) return null;
+              const linePrice = p.price || 0;
               return (
                 <div className="cart-line" key={`${line.slug}-${line.size}`}>
                   <div
@@ -1062,7 +1126,9 @@ function Cart() {
                     <span>
                       {line.size} · {line.color}
                     </span>
-                    <span>₹{p.price.toLocaleString("en-IN")}</span>
+                    <span>
+                      {linePrice > 0 ? `₹${linePrice.toLocaleString("en-IN")}` : 'Price on request'}
+                    </span>
                     <div className="quantity-control">
                       <button
                         onClick={() =>
@@ -1095,7 +1161,7 @@ function Cart() {
             <h2>Order summary</h2>
             <div>
               <span>Subtotal</span>
-              <span>₹{subtotal.toLocaleString("en-IN")}</span>
+              <span>{subtotal > 0 ? `₹${subtotal.toLocaleString("en-IN")}` : 'To be confirmed'}</span>
             </div>
             <div>
               <span>Delivery</span>
@@ -1107,6 +1173,11 @@ function Cart() {
               <div>
                 <span>Code applied</span>
                 <span>−₹{discount.toLocaleString("en-IN")}</span>
+              </div>
+            )}
+            {hasPriceUnknown && (
+              <div className="price-notice">
+                <span>Note: Some items have no price set. Final total will be confirmed by the atelier.</span>
               </div>
             )}
             <div className="coupon">
@@ -1121,7 +1192,7 @@ function Cart() {
             </div>
             <div className="summary-total">
               <b>Total</b>
-              <b>₹{Math.max(0, subtotal - discount).toLocaleString("en-IN")}</b>
+              <b>{subtotal > 0 && !hasPriceUnknown ? `₹${Math.max(0, subtotal - discount).toLocaleString("en-IN")}` : 'To be confirmed'}</b>
             </div>
             <Link className="button button-dark checkout-button" to="/checkout">
               Continue to checkout
@@ -1135,188 +1206,220 @@ function Cart() {
 }
 function Checkout() {
   const { cart, remove, couponCode, discountPercent, clearCoupon } = useStore();
-  const navigate = useNavigate();
   const { items } = useCatalog();
   const [error, setError] = useState("");
-  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     address: "",
     city: "",
-    state: "Delhi",
+    state: "Gujarat",
     pin: "",
+    notes: "",
   });
-  const [method, setMethod] = useState("Standard delivery");
+  const [whatsappSent, setWhatsAppSent] = useState(false);
   const subtotal = cart.reduce(
     (sum, l) =>
       sum + (items.find((p) => p.slug === l.slug)?.price || 0) * l.quantity,
     0,
   );
-  const total = Math.max(0, subtotal - Math.round((subtotal * discountPercent) / 100));
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
+  const discount = Math.round((subtotal * discountPercent) / 100);
+  const total = Math.max(0, subtotal - discount);
+  const hasPriceUnknown = cart.some(
+    (l) => (items.find((p) => p.slug === l.slug)?.price || 0) === 0
+  );
+
+  function validateForm(): boolean {
     if (!cart.length) {
       setError("Your bag is empty.");
-      return;
+      return false;
     }
     if (
-      Object.values(form).some((v) => !v.trim()) ||
-      !/^\S+@\S+\.\S+$/.test(form.email) ||
+      !form.name.trim() ||
+      !form.phone.trim() ||
+      !form.address.trim() ||
+      !form.city.trim() ||
+      !form.pin.trim() ||
       !/^[0-9]{6}$/.test(form.pin)
     ) {
-      setError(
-        "Please check your details. Enter a valid email and six-digit PIN code.",
-      );
+      setError("Please check your details. All fields are required. Enter a valid six-digit PIN code.");
+      return false;
+    }
+    return true;
+  }
+
+  function buildOrderItemsForWhatsApp() {
+    return cart.map((line) => {
+      const p = items.find((x) => x.slug === line.slug);
+      return {
+        name: p?.name ?? line.slug,
+        size: line.size,
+        color: line.color,
+        quantity: line.quantity,
+        price: p?.price ?? 0,
+      };
+    });
+  }
+
+  function handleSendWhatsApp() {
+    if (!validateForm()) return;
+
+    const whatsappItems = buildOrderItemsForWhatsApp();
+    const message = buildOrderWhatsAppMessage({
+      name: form.name,
+      phone: form.phone,
+      address: form.address,
+      city: form.city,
+      state: form.state,
+      pincode: form.pin,
+      notes: form.notes,
+      items: whatsappItems,
+      subtotal,
+      discount: discount > 0 ? discount : undefined,
+      couponCode: couponCode || undefined,
+    });
+
+    const { url, isPlaceholder } = buildWhatsAppUrl(message);
+    if (isPlaceholder) {
+      setError("WhatsApp number not configured. Please contact the atelier directly.");
       return;
     }
-    setSubmitting(true);
-    setError("");
-    try {
-      const order = await createOrder({
-        items: buildOrderItems(cart, items),
-        customer: { name: form.name, email: form.email, phone: form.phone },
-        address: {
-          line1: form.address,
-          city: form.city,
-          state: form.state,
-          pincode: form.pin,
-        },
-        ...(couponCode ? { couponCode } : {}),
-      });
-      try {
-        sessionStorage.setItem(
-          "noor-order",
-          JSON.stringify({ ...order, method }),
-        );
-      } catch {}
-      cart.forEach((line) => remove(line.slug, line.size));
-      clearCoupon();
-      navigate("/order-confirmation");
-    } catch (err) {
-      setError(errorMessage(err, "We could not place your order. Please try again."));
-    } finally {
-      setSubmitting(false);
-    }
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+    setWhatsAppSent(true);
   }
+
+  function handleConfirmSent() {
+    // Clear cart and coupon only after user confirms they sent the WhatsApp message
+    cart.forEach((line) => remove(line.slug, line.size));
+    clearCoupon();
+    setWhatsAppSent(false);
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      state: "Gujarat",
+      pin: "",
+      notes: "",
+    });
+  }
+
   return (
     <main className="page-shell">
       <span className="eyebrow">A FEW DETAILS</span>
       <h1 className="page-heading">Delivery & checkout.</h1>
-      <form className="checkout-layout" onSubmit={submit}>
-        <div className="checkout-form">
-          <h2>Where should we send it?</h2>
-          <div className="form-grid">
-            {[
-              ["name", "Full name"],
-              ["email", "Email address"],
-              ["phone", "Phone number"],
-              ["pin", "PIN code"],
-              ["city", "City"],
-              ["state", "State"],
-              ["address", "Street address"],
-            ].map(([name, label]) => (
-              <label key={name} className={name === "address" ? "wide" : ""}>
-                {label}
-                <input
-                  required
-                  value={form[name as keyof typeof form]}
-                  onChange={(e) => setForm({ ...form, [name]: e.target.value })}
-                />
-              </label>
-            ))}
-          </div>
-          <h2>Delivery method</h2>
-          <label className="delivery-choice">
-            <input
-              type="radio"
-              checked={method === "Standard delivery"}
-              onChange={() => setMethod("Standard delivery")}
-            />{" "}
-            Standard delivery <span>Complimentary · 3–6 working days</span>
-          </label>
-          <label className="delivery-choice">
-            <input
-              type="radio"
-              checked={method === "Atelier collection"}
-              onChange={() => setMethod("Atelier collection")}
-            />{" "}
-            Collect at the atelier <span>New Delhi · Ready when notified</span>
-          </label>
-          {error && (
-            <p className="form-error" role="alert">
-              {error}
-            </p>
-          )}
-          <button className="button button-dark" type="submit" disabled={submitting}>
-            {submitting
-              ? "Placing your order…"
-              : `Place order · ₹${total.toLocaleString("en-IN")}`}
+      {whatsappSent ? (
+        <div className="confirmation-panel">
+          <span className="eyebrow">ORDER REQUEST SENT</span>
+          <h2>Your order request has been sent via WhatsApp.</h2>
+          <p>Our atelier will review your request and confirm availability, pricing, and delivery timeline on WhatsApp.</p>
+          <p className="small-note">No order has been placed yet. The shop will confirm details with you before proceeding.</p>
+          <button className="button button-dark" onClick={handleConfirmSent}>
+            Yes, I sent it — Clear my bag
           </button>
-          <p className="small-note">
-            This is a mock checkout. No payment will be collected.
-          </p>
+          <button className="button button-outline" onClick={() => setWhatsAppSent(false)}>
+            Not yet — Go back
+          </button>
         </div>
-        <aside className="summary">
-          <h2>Your order</h2>
-          {cart.map((line) => {
-            const p = items.find((x) => x.slug === line.slug);
-            return (
-              <div key={line.slug}>
-                <span>
-                  {p?.name} × {line.quantity}
-                </span>
-                <span>
-                  ₹{((p?.price || 0) * line.quantity).toLocaleString("en-IN")}
-                </span>
-              </div>
-            );
-          })}
-          {discountPercent > 0 && (
-            <div>
-              <span>Offer ({discountPercent}%)</span>
-              <span>
-                −₹
-                {Math.round((subtotal * discountPercent) / 100).toLocaleString(
-                  "en-IN",
-                )}
-              </span>
+      ) : (
+        <form className="checkout-layout" onSubmit={(e) => { e.preventDefault(); handleSendWhatsApp(); }}>
+          <div className="checkout-form">
+            <h2>Where should we send it?</h2>
+            <div className="form-grid">
+              {[
+                ["name", "Full name"],
+                ["email", "Email address (optional)"],
+                ["phone", "Phone number"],
+                ["pin", "PIN code"],
+                ["city", "City"],
+                ["state", "State"],
+                ["address", "Street address"],
+                ["notes", "Delivery notes (optional)"],
+              ].map(([name, label]) => (
+                <label key={name} className={name === "address" || name === "notes" ? "wide" : ""}>
+                  {label}
+                  {name === "notes" ? (
+                    <textarea
+                      rows={3}
+                      value={form[name as keyof typeof form]}
+                      onChange={(e) => setForm({ ...form, [name]: e.target.value })}
+                    />
+                  ) : (
+                    <input
+                      required={name !== "email" && name !== "notes"}
+                      value={form[name as keyof typeof form]}
+                      onChange={(e) => setForm({ ...form, [name]: e.target.value })}
+                    />
+                  )}
+                </label>
+              ))}
             </div>
-          )}
-          <div className="summary-total">
-            <b>Total</b>
-            <b>₹{total.toLocaleString("en-IN")}</b>
+            {error && (
+              <p className="form-error" role="alert">
+                {error}
+              </p>
+            )}
+            <button className="button button-dark" type="button" onClick={handleSendWhatsApp}>
+              Send order request on WhatsApp
+            </button>
+            <p className="small-note">
+              This sends your order details to our WhatsApp. No payment is collected. The atelier will confirm availability and pricing before any order is placed.
+            </p>
           </div>
-        </aside>
-      </form>
+          <aside className="summary">
+            <h2>Your order request</h2>
+            {cart.map((line) => {
+              const p = items.find((x) => x.slug === line.slug);
+              const linePrice = p?.price || 0;
+              return (
+                <div key={line.slug}>
+                  <span>
+                    {p?.name} × {line.quantity} ({line.size}, {line.color})
+                  </span>
+                  <span>
+                    {linePrice > 0 ? `₹${(linePrice * line.quantity).toLocaleString("en-IN")}` : 'Price on request'}
+                  </span>
+                </div>
+              );
+            })}
+            {discount > 0 && (
+              <div>
+                <span>Offer ({discountPercent}%)</span>
+                <span>−₹{discount.toLocaleString("en-IN")}</span>
+              </div>
+            )}
+            {hasPriceUnknown && (
+              <div className="price-notice">
+                Some items have no price set. Final total will be confirmed by the atelier.
+              </div>
+            )}
+            <div className="summary-total">
+              <b>Total</b>
+              <b>{total > 0 && !hasPriceUnknown ? `₹${total.toLocaleString("en-IN")}` : 'To be confirmed'}</b>
+            </div>
+          </aside>
+        </form>
+      )}
     </main>
   );
 }
 function Confirmation() {
-  const [order] = useState<{ id?: string; total?: number } | null>(() => {
-    try {
-      const raw = sessionStorage.getItem("noor-order");
-      return raw ? JSON.parse(raw) : null;
-    } catch {
-      return null;
-    }
-  });
   return (
     <main className="page-shell confirmation">
       <span className="eyebrow">THANK YOU</span>
       <h1>
-        Your occasion
+        Your order request
         <br />
-        starts here.
+        has been sent.
       </h1>
       <p>
-        We have received your order. Our atelier will be in touch to confirm the
-        details.
+        We have received your order request via WhatsApp. Our atelier will be in touch to confirm
+        availability, pricing, and delivery details.
       </p>
-      {order?.id && (
-        <p className="small-note">Order reference · {order.id}</p>
-      )}
+      <p className="small-note">No order has been placed yet. The shop will confirm details with you before proceeding.</p>
       <Link className="button button-dark" to="/shop">
         Back to the collection ↗
       </Link>
@@ -1346,19 +1449,21 @@ function Wishlist() {
   );
 }
 function Tailoring() {
-  const [step, setStep] = useState(1),
-    [success, setSuccess] = useState(false),
-    [submitting, setSubmitting] = useState(false),
-    [values, setValues] = useState({
-      garment: "Suit",
-      occasion: "Wedding",
-      name: "",
-      phone: "",
-      date: "",
-      visit: "Yes",
-      notes: "",
-    }),
-    [error, setError] = useState("");
+  const [step, setStep] = useState(1);
+  const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [values, setValues] = useState({
+    garment: "Suit",
+    occasion: "Wedding",
+    name: "",
+    phone: "",
+    date: "",
+    visit: "in-store",
+    notes: "",
+  });
+  const [error, setError] = useState("");
+  const [whatsappSent, setWhatsAppSent] = useState(false);
+
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (step < 3) {
@@ -1376,12 +1481,32 @@ function Tailoring() {
         garmentType: values.garment,
         occasion: values.occasion,
         preferredDate: values.date,
-        contactMethod: values.visit === "Yes" ? "in-store" : "call",
+        contactMethod: values.visit === "in-store" ? "in-store" : "call",
         name: values.name,
         phone: values.phone,
         ...(values.notes ? { notes: values.notes } : {}),
       });
-      setSuccess(true);
+      
+      // Send WhatsApp message with booking details
+      const message = buildAppointmentWhatsAppMessage({
+        garment: values.garment,
+        occasion: values.occasion,
+        visit: values.visit,
+        date: values.date,
+        name: values.name,
+        phone: values.phone,
+        notes: values.notes,
+      });
+      
+      const { url, isPlaceholder } = buildWhatsAppUrl(message);
+      if (isPlaceholder) {
+        setError("WhatsApp number not configured. Please contact the atelier directly.");
+        setSubmitting(false);
+        return;
+      }
+      
+      window.open(url, '_blank', 'noopener,noreferrer');
+      setWhatsAppSent(true);
     } catch (err) {
       setError(
         errorMessage(err, "We could not save your request. Please try again."),
@@ -1390,6 +1515,22 @@ function Tailoring() {
       setSubmitting(false);
     }
   }
+  
+  function handleConfirmSent() {
+    setSuccess(true);
+    setWhatsAppSent(false);
+    setValues({
+      garment: "Suit",
+      occasion: "Wedding",
+      name: "",
+      phone: "",
+      date: "",
+      visit: "in-store",
+      notes: "",
+    });
+    setStep(1);
+  }
+
   return (
     <main className="page-shell tailoring-page">
       <div className="tailoring-copy">
@@ -1403,13 +1544,25 @@ function Tailoring() {
           fitting at a time.
         </p>
         <div className="tailoring-meta">
-          NEW DELHI · BY APPOINTMENT
+          {shopConfig.city.toUpperCase()} · BY APPOINTMENT
           <br />
           TUESDAY—SATURDAY
         </div>
       </div>
       <form className="tailoring-form" onSubmit={submit}>
-        {success ? (
+        {whatsappSent ? (
+          <div className="success-panel">
+            <span className="eyebrow">APPOINTMENT REQUEST SENT</span>
+            <h2>Your appointment request has been sent via WhatsApp.</h2>
+            <p>Our team will be in touch to confirm your visit.</p>
+            <button className="button button-dark" onClick={handleConfirmSent}>
+              Yes, I sent it
+            </button>
+            <button className="button button-outline" onClick={() => setWhatsAppSent(false)}>
+              Not yet — Go back
+            </button>
+          </div>
+        ) : success ? (
           <div className="success-panel">
             <span className="eyebrow">REQUEST RECEIVED</span>
             <h2>We will call you shortly.</h2>
@@ -1473,8 +1626,8 @@ function Tailoring() {
                       setValues({ ...values, visit: e.target.value })
                     }
                   >
-                    <option>Yes</option>
-                    <option>Not yet, call me first</option>
+                    <option value="in-store">Yes, visit the atelier</option>
+                    <option value="call">Not yet, call me first</option>
                   </select>
                 </label>
                 <label>
@@ -1548,8 +1701,9 @@ function Tailoring() {
 }
 function ContactForm() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "whatsapp">("idle");
   const [error, setError] = useState("");
+  
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!values.name.trim() || !values.message.trim()) {
@@ -1564,13 +1718,33 @@ function ContactForm() {
     setError("");
     try {
       await sendContactMessage(values);
-      setStatus("sent");
-      setValues({ name: "", email: "", message: "" });
+      
+      // Also open WhatsApp
+      const message = buildContactWhatsAppMessage({
+        name: values.name,
+        message: values.message,
+      });
+      
+      const { url, isPlaceholder } = buildWhatsAppUrl(message);
+      if (isPlaceholder) {
+        setStatus("sent");
+        setValues({ name: "", email: "", message: "" });
+        return;
+      }
+      
+      setStatus("whatsapp");
+      window.open(url, '_blank', 'noopener,noreferrer');
     } catch (err) {
       setError(errorMessage(err, "We could not send your message. Please try again."));
       setStatus("idle");
     }
   }
+  
+  function handleConfirmSent() {
+    setStatus("sent");
+    setValues({ name: "", email: "", message: "" });
+  }
+
   if (status === "sent") {
     return (
       <div className="success-panel">
@@ -1579,6 +1753,23 @@ function ContactForm() {
       </div>
     );
   }
+  
+  if (status === "whatsapp") {
+    return (
+      <div className="success-panel">
+        <span className="eyebrow">MESSAGE SENT VIA WHATSAPP</span>
+        <h2>Your message has been sent via WhatsApp.</h2>
+        <p>Our team will reply to you there.</p>
+        <button className="button button-dark" onClick={handleConfirmSent}>
+          Yes, I sent it
+        </button>
+        <button className="button button-outline" onClick={() => setStatus("idle")}>
+          Not yet — Go back
+        </button>
+      </div>
+    );
+  }
+  
   return (
     <form className="checkout-form" onSubmit={submit}>
       <h2>Send us a note</h2>
@@ -1587,8 +1778,8 @@ function ContactForm() {
           {field === "name"
             ? "Full name"
             : field === "email"
-              ? "Email address"
-              : "How can we help?"}
+            ? "Email address"
+            : "How can we help?"}
           {field === "message" ? (
             <textarea
               required
@@ -1633,7 +1824,7 @@ function ContentPage({ type }: { type: string }) {
     contact: {
       label: "COME BY",
       title: "A conversation is a good place to start.",
-      copy: `${storeInfo.address}\n${storeInfo.hours}\n${storeInfo.phone}`,
+      copy: `${shopConfig.addressLines.join('\n')}\n${shopConfig.openingHours}\n${shopConfig.phone}`,
     },
     faq: {
       label: "GOOD TO KNOW",
@@ -1703,18 +1894,22 @@ function ContentPage({ type }: { type: string }) {
       {type === "contact" && (
         <div className="contact-actions">
           <a
-            href={`tel:${storeInfo.phone.replaceAll(" ", "")}`}
+            href={`tel:${shopConfig.phone.replaceAll(" ", "")}`}
             className="button button-dark"
           >
             Call the atelier ↗
           </a>
           <a
-            href={`https://wa.me/${storeInfo.whatsapp}`}
+            href={buildWhatsAppUrl(`Hello ${shopConfig.name}, I would like to get in touch.`).url}
             className="button button-outline"
+            target="_blank"
+            rel="noreferrer"
           >
-            WhatsApp ↗
+            Chat on WhatsApp ↗
           </a>
-          <div className="map-placeholder">NEW DELHI · MEHERCHAND MARKET</div>
+          <div className="map-placeholder">
+            {shopConfig.city.toUpperCase()} · {shopConfig.addressLines[0].toUpperCase()}
+          </div>
           <ContactForm />
         </div>
       )}
@@ -1795,7 +1990,7 @@ function VisitBanner() {
           Come in for a<br />
           conversation.
         </h2>
-        <p>Nava Fadiya, Near Tower, Vansda, Gujarat 388620</p>
+        <p>{shopConfig.addressLines.join(', ')}</p>
       </div>
       <Link className="button button-light" to="/contact">
         Find the atelier ↗
@@ -1812,13 +2007,13 @@ function Shell() {
       location.pathname.split("/").filter(Boolean).at(-1) || "home";
     const title =
       section === "home"
-        ? "Noor Tailor — A New Delhi Tailoring House"
-        : `${section.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())} | Noor Tailor`;
+        ? `${shopConfig.name} — ${shopConfig.tagline}`
+        : `${section.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())} | ${shopConfig.name}`;
     document.title = title;
     const description = document.querySelector("meta[name=description]");
     description?.setAttribute(
       "content",
-      `Explore ${section.replaceAll("-", " ")} at Noor Tailor, New Delhi. Considered menswear and made-to-measure tailoring.`,
+      `Explore ${section.replaceAll("-", " ")} at ${shopConfig.name}, ${shopConfig.city}. Considered menswear and made-to-measure tailoring.`,
     );
   }, [location.pathname]);
   return (
@@ -1857,6 +2052,16 @@ function Shell() {
           Bag · {cart.reduce((s, x) => s + x.quantity, 0)}
         </Link>
       )}
+      {/* Floating WhatsApp button */}
+      <a
+        className="floating-whatsapp"
+        href={buildWhatsAppUrl(`Hello ${shopConfig.name}, I would like to get in touch.`).url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.466-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378 9.86 9.86 0 01-.147-.3c-.245.14-.347.298-.57.447-.199.149-.549.224-1.147.074-.72-.173-1.291-.694-1.612-1.291-.215-.417-.134-1.114.174-1.641.45-.767 2.266-2.977 3.646-4.544.372-.42.743-.71 1.114-.916 1.275-.671 1.568-.79 3.074-.79 1.52 0 2.833.15 3.95.597 1.097.436 1.977 1.33 2.291 2.18.33.887.3 1.79.086 2.492-.2.68-.722.85-1.47.85H3.857v1.08c0 .57.008 1.164.086 1.52.148.67.618 1.09 1.195 1.174.916.134 2.813.118 3.978-.16 1.408-.337 2.08-.967 2.352-1.58.272-.624.272-1.213.215-1.39-.149-.45-.549-.435-.887-.373-.42.042-.946.404-1.194.758-.273.368-.71.52-1.425.749-.526.174-2.22.57-3.308.916-.94.287-1.73.326-2.32.173-.995-.259-1.853-1.036-2.378-1.885-.267-.427-.273-.799-.273-1.164 0-.365.018-.694.19-.916.346-.447 1.675-1.54 2.977-2.823 1.288-1.267 2.589-2.454 3.405-3.367.54-.605.67-.67.967-.67.33 0 .513.07.767.124.254.05.597.215 1.016.347.788.25 1.956.97 2.842 2.107.916 1.195 1.29 2.107 1.36 2.378.019.056.075.085.134.085.04 0 .057-.01.117-.056.42-.334.85-.79 1.073-1.267.224-.474.238-1.12.104-1.573-.06-.214-.148-.347-.42-.434-.316-.104-.61-.124-.782-.124-.364 0-.555.085-.767.198-.212.114-.42.316-.42.543 0 .042 0 .085.01.127.074.297.41.57.556.94.372.372.513.52.995.645.482.124.915.25 1.228.347 2.395.735 4.057 2.843 4.057 4.786 0 .787-.198 1.573-.57 2.32-.358.734-1.413 1.37-2.722 1.612-.45.099-.845.19-.995.19h-.004a10.01 10.01 0 01-3.676-.105 10.17 10.17 0 01-2.266-.57 10.47 10.47 0 01-2.117-1.355"/></svg>
+      </a>
     </>
   );
 }

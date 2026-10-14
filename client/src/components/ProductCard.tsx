@@ -3,9 +3,14 @@ import type { Product } from '../types'
 import { useStore } from '../hooks/useStore'
 import { handleImageError } from '../utils/productFallback'
 import { productPath } from '../utils/paths'
+import { getWebPPath, getThumbnailPath } from '../utils/imagePaths'
 
 export function ProductCard({ product }: { product: Product }) {
   const { wishlist, toggleWish } = useStore()
+
+  const mainImage = product.images[0] ?? '/images/products/ivory-raw-silk-bandhgala.jpg';
+  const webpSrc = getWebPPath(mainImage);
+  const thumbSrc = getThumbnailPath(mainImage);
 
   return (
     <article className="product-card">
@@ -13,7 +18,19 @@ export function ProductCard({ product }: { product: Product }) {
         <div className={`art-swatch ${product.category.toLowerCase().replace(/\W/g, '')}`} style={{ '--garment': product.colors[0]?.hex } as React.CSSProperties}>
           <span className="art-mark">N</span>
         </div>
-        <img className="product-photo" src={product.images[0]} alt={product.imageAlt ?? product.name} width="600" height="750" loading="lazy" onError={(e) => handleImageError(e, `product:${product.slug}`)} />
+        <picture>
+          <source srcSet={thumbSrc} media="(max-width: 600px)" type="image/webp" />
+          <source srcSet={webpSrc} type="image/webp" />
+          <img
+            className="product-photo"
+            src={mainImage}
+            alt={product.imageAlt ?? product.name}
+            width="600"
+            height="750"
+            loading="lazy"
+            onError={(e) => handleImageError(e, `product:${product.slug}`)}
+          />
+        </picture>
         <span className="art-note">NOOR / {product.subcategory.toUpperCase()}</span>
         {product.isNew && <span className="badge">New</span>}
       </Link>
