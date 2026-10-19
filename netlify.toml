@@ -40,3 +40,42 @@
   from = "/*"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/og-image.jpg"
+  to = "/og-image.jpg"
+  status = 200
+
+[[redirects]]
+  from = "/favicon*"
+  to = "/favicon:splat"
+  status = 200
+
+[[redirects]]
+  from = "/manifest.webmanifest"
+  to = "/manifest.webmanifest"
+  status = 200
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/*.*"
+  to = "/:splat"
+  status = 404

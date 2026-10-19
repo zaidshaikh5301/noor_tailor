@@ -1,1 +1,8 @@
-/*  /index.html  200
+/images/*    /images/:splat   200
+/assets/*    /assets/:splat   200
+/favicon*    /favicon*        200
+/og-image.jpg /og-image.jpg    200
+/manifest.webmanifest /manifest.webmanifest 200
+/robots.txt  /robots.txt      200
+/sitemap.xml /sitemap.xml     200
+/*           /index.html      200
