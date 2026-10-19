@@ -1,6 +1,6 @@
 # Noor Tailor
 
-Editorial menswear storefront for a New Delhi tailoring house. The repository contains a React + TypeScript + Vite client that runs entirely on a local mock catalog in production (no backend deployed). Orders are placed via WhatsApp.
+Editorial menswear storefront for a Vansda tailoring house. The repository contains a React + TypeScript + Vite client that runs entirely on a local mock catalog in production (no backend deployed). Orders are placed via WhatsApp.
 
 ## Architecture
 

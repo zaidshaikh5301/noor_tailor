@@ -1,0 +1,1 @@
+﻿const fs=require('fs');let s=fs.readFileSync('src/data/products.ts','utf8');s=s.replace(/make\('img-4126',[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,/,'make(\'img-4126\',\'Navy Bandhgala\',\'Indo-Western\',\'Bandhgala\',22900,\'Silk blend\',\'Navy\',\'#293648\',[\'Wedding\',\'Reception\'],');fs.writeFileSync('src/data/products.ts',s);console.log('ok');

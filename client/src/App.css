@@ -358,25 +358,28 @@
   text-shadow: 0 1px 3px #0005;
 }
 .category-name {
-  position: absolute;
-  inset: auto 0 0;
-  padding: 38px 19px 17px;
-  color: white;
-  background: linear-gradient(transparent, #1d211b99);
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-}
-.category-name strong {
-  font: 400 27px var(--serif);
-}
-.category-name span {
-  font-size: 10px;
-}
-.category-name b {
-  font-weight: 400;
-  margin-left: 9px;
-}
+    position: absolute;
+    inset: auto 0 0;
+    padding: 38px 19px 17px;
+    color: white;
+    background: linear-gradient(transparent, #1d211bff);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .category-name strong {
+    font: 400 27px var(--serif);
+  }
+  .category-name span {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .category-name b {
+    font-weight: 400;
+    margin-left: 9px;
+  }
 .wedding-feature {
   display: grid;
   grid-template-columns: 56% 44%;
@@ -1667,21 +1670,24 @@ footer {
     height: 285px;
   }
   .category-name {
-    padding: 30px 12px 12px;
-    display: block;
-  }
-  .category-name strong {
-    font-size: 21px;
-    display: block;
-  }
-  .category-name span {
-    font-size: 10px;
-  }
-  .category-number {
-    top: 12px;
-    left: 11px;
-    font-size: 10px;
-  }
+      padding: 30px 12px 12px;
+      display: block;
+    }
+    .category-name strong {
+      font-size: 21px;
+      display: block;
+    }
+    .category-name span {
+      font-size: 13px;
+      font-weight: 500;
+      display: block;
+      margin-top: 4px;
+    }
+    .category-number {
+      top: 12px;
+      left: 11px;
+      font-size: 10px;
+    }
   .tile-garment {
     width: 52%;
     left: 25%;

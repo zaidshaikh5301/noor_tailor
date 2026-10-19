@@ -5,7 +5,7 @@ import {
   getRelatedProducts,
   getCategories,
 } from "../controllers/productController.js";
-import { sanitizeMongo } from "../middleware.js";
+import { sanitizeMongo } from "../middleware/index.js";
 
 const router = Router();
 

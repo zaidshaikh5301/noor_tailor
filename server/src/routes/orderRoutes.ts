@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createOrder, getOrderById } from "../controllers/orderController.js";
-import { createRateLimiter } from "../middleware.js";
+import { createRateLimiter } from "../middleware/index.js";
 import { env } from "../config/env.js";
 
 const router = Router();
