@@ -1,0 +1,873 @@
+{
+  "generatedAt": "2026-10-19T05:33:47.148Z",
+  "totalImages": 108,
+  "totalOriginalBytes": 146728194,
+  "totalWebpBytes": 45802526,
+  "totalThumbnailBytes": 37700374,
+  "images": [
+    {
+      "original": "\\client\\public\\images\\products\\black-asymmetric-kurta-set.jpg",
+      "webp": "\\client\\public\\images\\products\\black-asymmetric-kurta-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-asymmetric-kurta-set-thumb.webp",
+      "originalSizeKB": 2110,
+      "webpSizeKB": 2110,
+      "thumbnailSizeKB": 2110
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-asymmetric-kurta-set.webp",
+      "webp": "\\client\\public\\images\\products\\black-asymmetric-kurta-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-asymmetric-kurta-set-thumb.webp",
+      "originalSizeKB": 2110,
+      "webpSizeKB": 2110,
+      "thumbnailSizeKB": 2110
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-formal-trouser.jpg",
+      "webp": "\\client\\public\\images\\products\\black-formal-trouser.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-formal-trouser-thumb.webp",
+      "originalSizeKB": 2424,
+      "webpSizeKB": 493,
+      "thumbnailSizeKB": 84
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-formal-trouser.webp",
+      "webp": "\\client\\public\\images\\products\\black-formal-trouser.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-formal-trouser-thumb.webp",
+      "originalSizeKB": 493,
+      "webpSizeKB": 493,
+      "thumbnailSizeKB": 84
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-jodhpuri-set.jpg",
+      "webp": "\\client\\public\\images\\products\\black-jodhpuri-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-jodhpuri-set-thumb.webp",
+      "originalSizeKB": 1751,
+      "webpSizeKB": 67,
+      "thumbnailSizeKB": 25
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-jodhpuri-set.webp",
+      "webp": "\\client\\public\\images\\products\\black-jodhpuri-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-jodhpuri-set-thumb.webp",
+      "originalSizeKB": 67,
+      "webpSizeKB": 67,
+      "thumbnailSizeKB": 25
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-kurta-jacket.jpg",
+      "webp": "\\client\\public\\images\\products\\black-kurta-jacket.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-kurta-jacket-thumb.webp",
+      "originalSizeKB": 4919,
+      "webpSizeKB": 396,
+      "thumbnailSizeKB": 191
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-kurta-jacket.webp",
+      "webp": "\\client\\public\\images\\products\\black-kurta-jacket.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-kurta-jacket-thumb.webp",
+      "originalSizeKB": 396,
+      "webpSizeKB": 396,
+      "thumbnailSizeKB": 191
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-three-piece-tuxedo.jpg",
+      "webp": "\\client\\public\\images\\products\\black-three-piece-tuxedo.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-three-piece-tuxedo-thumb.webp",
+      "originalSizeKB": 968,
+      "webpSizeKB": 968,
+      "thumbnailSizeKB": 968
+    },
+    {
+      "original": "\\client\\public\\images\\products\\black-three-piece-tuxedo.webp",
+      "webp": "\\client\\public\\images\\products\\black-three-piece-tuxedo.webp",
+      "thumbnail": "\\client\\public\\images\\products\\black-three-piece-tuxedo-thumb.webp",
+      "originalSizeKB": 968,
+      "webpSizeKB": 968,
+      "thumbnailSizeKB": 968
+    },
+    {
+      "original": "\\client\\public\\images\\products\\blue-asymmetric-set.jpg",
+      "webp": "\\client\\public\\images\\products\\blue-asymmetric-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\blue-asymmetric-set-thumb.webp",
+      "originalSizeKB": 8764,
+      "webpSizeKB": 100,
+      "thumbnailSizeKB": 42
+    },
+    {
+      "original": "\\client\\public\\images\\products\\blue-asymmetric-set.webp",
+      "webp": "\\client\\public\\images\\products\\blue-asymmetric-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\blue-asymmetric-set-thumb.webp",
+      "originalSizeKB": 100,
+      "webpSizeKB": 100,
+      "thumbnailSizeKB": 42
+    },
+    {
+      "original": "\\client\\public\\images\\products\\charcoal-two-piece.jpg",
+      "webp": "\\client\\public\\images\\products\\charcoal-two-piece.webp",
+      "thumbnail": "\\client\\public\\images\\products\\charcoal-two-piece-thumb.webp",
+      "originalSizeKB": 2894,
+      "webpSizeKB": 272,
+      "thumbnailSizeKB": 102
+    },
+    {
+      "original": "\\client\\public\\images\\products\\charcoal-two-piece.webp",
+      "webp": "\\client\\public\\images\\products\\charcoal-two-piece.webp",
+      "thumbnail": "\\client\\public\\images\\products\\charcoal-two-piece-thumb.webp",
+      "originalSizeKB": 272,
+      "webpSizeKB": 272,
+      "thumbnailSizeKB": 102
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer.jpg",
+      "webp": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer-thumb.webp",
+      "originalSizeKB": 3394,
+      "webpSizeKB": 198,
+      "thumbnailSizeKB": 94
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer.webp",
+      "webp": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cobalt-bandhgala-blazer-thumb.webp",
+      "originalSizeKB": 198,
+      "webpSizeKB": 198,
+      "thumbnailSizeKB": 94
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-asymmetric-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\cream-asymmetric-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-asymmetric-kurta-thumb.webp",
+      "originalSizeKB": 1181,
+      "webpSizeKB": 81,
+      "thumbnailSizeKB": 30
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-asymmetric-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\cream-asymmetric-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-asymmetric-kurta-thumb.webp",
+      "originalSizeKB": 81,
+      "webpSizeKB": 81,
+      "thumbnailSizeKB": 30
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-cape-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\cream-cape-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-cape-kurta-thumb.webp",
+      "originalSizeKB": 1884,
+      "webpSizeKB": 58,
+      "thumbnailSizeKB": 24
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-cape-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\cream-cape-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-cape-kurta-thumb.webp",
+      "originalSizeKB": 58,
+      "webpSizeKB": 58,
+      "thumbnailSizeKB": 24
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-navratri-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\cream-navratri-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-navratri-kurta-thumb.webp",
+      "originalSizeKB": 1177,
+      "webpSizeKB": 1177,
+      "thumbnailSizeKB": 1177
+    },
+    {
+      "original": "\\client\\public\\images\\products\\cream-navratri-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\cream-navratri-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\cream-navratri-kurta-thumb.webp",
+      "originalSizeKB": 1177,
+      "webpSizeKB": 1177,
+      "thumbnailSizeKB": 1177
+    },
+    {
+      "original": "\\client\\public\\images\\products\\deep-green-festive-blazer.jpg",
+      "webp": "\\client\\public\\images\\products\\deep-green-festive-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\deep-green-festive-blazer-thumb.webp",
+      "originalSizeKB": 1329,
+      "webpSizeKB": 1329,
+      "thumbnailSizeKB": 1329
+    },
+    {
+      "original": "\\client\\public\\images\\products\\deep-green-festive-blazer.webp",
+      "webp": "\\client\\public\\images\\products\\deep-green-festive-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\deep-green-festive-blazer-thumb.webp",
+      "originalSizeKB": 1329,
+      "webpSizeKB": 1329,
+      "thumbnailSizeKB": 1329
+    },
+    {
+      "original": "\\client\\public\\images\\products\\deep-navy-windowpane-suit.jpg",
+      "webp": "\\client\\public\\images\\products\\deep-navy-windowpane-suit.webp",
+      "thumbnail": "\\client\\public\\images\\products\\deep-navy-windowpane-suit-thumb.webp",
+      "originalSizeKB": 1166,
+      "webpSizeKB": 1166,
+      "thumbnailSizeKB": 1166
+    },
+    {
+      "original": "\\client\\public\\images\\products\\deep-navy-windowpane-suit.webp",
+      "webp": "\\client\\public\\images\\products\\deep-navy-windowpane-suit.webp",
+      "thumbnail": "\\client\\public\\images\\products\\deep-navy-windowpane-suit-thumb.webp",
+      "originalSizeKB": 1166,
+      "webpSizeKB": 1166,
+      "thumbnailSizeKB": 1166
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ecru-puja-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\ecru-puja-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ecru-puja-kurta-thumb.webp",
+      "originalSizeKB": 2976,
+      "webpSizeKB": 116,
+      "thumbnailSizeKB": 53
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ecru-puja-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\ecru-puja-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ecru-puja-kurta-thumb.webp",
+      "originalSizeKB": 116,
+      "webpSizeKB": 116,
+      "thumbnailSizeKB": 53
+    },
+    {
+      "original": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri.jpg",
+      "webp": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri.webp",
+      "thumbnail": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri-thumb.webp",
+      "originalSizeKB": 1733,
+      "webpSizeKB": 84,
+      "thumbnailSizeKB": 33
+    },
+    {
+      "original": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri.webp",
+      "webp": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri.webp",
+      "thumbnail": "\\client\\public\\images\\products\\emerald-velvet-jodhpuri-thumb.webp",
+      "originalSizeKB": 84,
+      "webpSizeKB": 84,
+      "thumbnailSizeKB": 33
+    },
+    {
+      "original": "\\client\\public\\images\\products\\forest-nehru-jacket.jpg",
+      "webp": "\\client\\public\\images\\products\\forest-nehru-jacket.webp",
+      "thumbnail": "\\client\\public\\images\\products\\forest-nehru-jacket-thumb.webp",
+      "originalSizeKB": 1536,
+      "webpSizeKB": 40,
+      "thumbnailSizeKB": 19
+    },
+    {
+      "original": "\\client\\public\\images\\products\\forest-nehru-jacket.webp",
+      "webp": "\\client\\public\\images\\products\\forest-nehru-jacket.webp",
+      "thumbnail": "\\client\\public\\images\\products\\forest-nehru-jacket-thumb.webp",
+      "originalSizeKB": 40,
+      "webpSizeKB": 40,
+      "thumbnailSizeKB": 19
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4126.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4126.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4126-thumb.webp",
+      "originalSizeKB": 1517,
+      "webpSizeKB": 43,
+      "thumbnailSizeKB": 19
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4126.webp",
+      "webp": "\\client\\public\\images\\products\\img-4126.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4126-thumb.webp",
+      "originalSizeKB": 43,
+      "webpSizeKB": 43,
+      "thumbnailSizeKB": 19
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4128.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4128.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4128-thumb.webp",
+      "originalSizeKB": 124,
+      "webpSizeKB": 59,
+      "thumbnailSizeKB": 31
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4128.webp",
+      "webp": "\\client\\public\\images\\products\\img-4128.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4128-thumb.webp",
+      "originalSizeKB": 59,
+      "webpSizeKB": 59,
+      "thumbnailSizeKB": 31
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4138.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4138.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4138-thumb.webp",
+      "originalSizeKB": 1797,
+      "webpSizeKB": 110,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4138.webp",
+      "webp": "\\client\\public\\images\\products\\img-4138.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4138-thumb.webp",
+      "originalSizeKB": 110,
+      "webpSizeKB": 110,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4141.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4141.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4141-thumb.webp",
+      "originalSizeKB": 2163,
+      "webpSizeKB": 112,
+      "thumbnailSizeKB": 35
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4141.webp",
+      "webp": "\\client\\public\\images\\products\\img-4141.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4141-thumb.webp",
+      "originalSizeKB": 112,
+      "webpSizeKB": 112,
+      "thumbnailSizeKB": 35
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4192.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4192.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4192-thumb.webp",
+      "originalSizeKB": 2202,
+      "webpSizeKB": 134,
+      "thumbnailSizeKB": 50
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4192.webp",
+      "webp": "\\client\\public\\images\\products\\img-4192.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4192-thumb.webp",
+      "originalSizeKB": 134,
+      "webpSizeKB": 134,
+      "thumbnailSizeKB": 50
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4472.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4472.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4472-thumb.webp",
+      "originalSizeKB": 1950,
+      "webpSizeKB": 103,
+      "thumbnailSizeKB": 47
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4472.webp",
+      "webp": "\\client\\public\\images\\products\\img-4472.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4472-thumb.webp",
+      "originalSizeKB": 103,
+      "webpSizeKB": 103,
+      "thumbnailSizeKB": 47
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4473.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4473.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4473-thumb.webp",
+      "originalSizeKB": 1559,
+      "webpSizeKB": 51,
+      "thumbnailSizeKB": 13
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4473.webp",
+      "webp": "\\client\\public\\images\\products\\img-4473.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4473-thumb.webp",
+      "originalSizeKB": 51,
+      "webpSizeKB": 51,
+      "thumbnailSizeKB": 13
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4923.jpg",
+      "webp": "\\client\\public\\images\\products\\img-4923.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4923-thumb.webp",
+      "originalSizeKB": 4965,
+      "webpSizeKB": 199,
+      "thumbnailSizeKB": 80
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-4923.webp",
+      "webp": "\\client\\public\\images\\products\\img-4923.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-4923-thumb.webp",
+      "originalSizeKB": 199,
+      "webpSizeKB": 199,
+      "thumbnailSizeKB": 80
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5002.jpg",
+      "webp": "\\client\\public\\images\\products\\img-5002.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5002-thumb.webp",
+      "originalSizeKB": 2113,
+      "webpSizeKB": 137,
+      "thumbnailSizeKB": 66
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5002.webp",
+      "webp": "\\client\\public\\images\\products\\img-5002.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5002-thumb.webp",
+      "originalSizeKB": 137,
+      "webpSizeKB": 137,
+      "thumbnailSizeKB": 66
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5124.jpg",
+      "webp": "\\client\\public\\images\\products\\img-5124.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5124-thumb.webp",
+      "originalSizeKB": 1527,
+      "webpSizeKB": 62,
+      "thumbnailSizeKB": 28
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5124.webp",
+      "webp": "\\client\\public\\images\\products\\img-5124.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5124-thumb.webp",
+      "originalSizeKB": 62,
+      "webpSizeKB": 62,
+      "thumbnailSizeKB": 28
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5132.jpg",
+      "webp": "\\client\\public\\images\\products\\img-5132.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5132-thumb.webp",
+      "originalSizeKB": 236,
+      "webpSizeKB": 86,
+      "thumbnailSizeKB": 55
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5132.webp",
+      "webp": "\\client\\public\\images\\products\\img-5132.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5132-thumb.webp",
+      "originalSizeKB": 86,
+      "webpSizeKB": 86,
+      "thumbnailSizeKB": 55
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5145.jpg",
+      "webp": "\\client\\public\\images\\products\\img-5145.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5145-thumb.webp",
+      "originalSizeKB": 2365,
+      "webpSizeKB": 162,
+      "thumbnailSizeKB": 76
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5145.webp",
+      "webp": "\\client\\public\\images\\products\\img-5145.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5145-thumb.webp",
+      "originalSizeKB": 162,
+      "webpSizeKB": 162,
+      "thumbnailSizeKB": 76
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5214.jpg",
+      "webp": "\\client\\public\\images\\products\\img-5214.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5214-thumb.webp",
+      "originalSizeKB": 88,
+      "webpSizeKB": 33,
+      "thumbnailSizeKB": 33
+    },
+    {
+      "original": "\\client\\public\\images\\products\\img-5214.webp",
+      "webp": "\\client\\public\\images\\products\\img-5214.webp",
+      "thumbnail": "\\client\\public\\images\\products\\img-5214-thumb.webp",
+      "originalSizeKB": 33,
+      "webpSizeKB": 33,
+      "thumbnailSizeKB": 33
+    },
+    {
+      "original": "\\client\\public\\images\\products\\indigo-pathani-set.jpg",
+      "webp": "\\client\\public\\images\\products\\indigo-pathani-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\indigo-pathani-set-thumb.webp",
+      "originalSizeKB": 2758,
+      "webpSizeKB": 145,
+      "thumbnailSizeKB": 64
+    },
+    {
+      "original": "\\client\\public\\images\\products\\indigo-pathani-set.webp",
+      "webp": "\\client\\public\\images\\products\\indigo-pathani-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\indigo-pathani-set-thumb.webp",
+      "originalSizeKB": 145,
+      "webpSizeKB": 145,
+      "thumbnailSizeKB": 64
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-groom-waistcoat.jpg",
+      "webp": "\\client\\public\\images\\products\\ivory-groom-waistcoat.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-groom-waistcoat-thumb.webp",
+      "originalSizeKB": 1259,
+      "webpSizeKB": 1259,
+      "thumbnailSizeKB": 1259
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-groom-waistcoat.webp",
+      "webp": "\\client\\public\\images\\products\\ivory-groom-waistcoat.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-groom-waistcoat-thumb.webp",
+      "originalSizeKB": 1259,
+      "webpSizeKB": 1259,
+      "thumbnailSizeKB": 1259
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani.jpg",
+      "webp": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani-thumb.webp",
+      "originalSizeKB": 1208,
+      "webpSizeKB": 382,
+      "thumbnailSizeKB": 63
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani.webp",
+      "webp": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-pearl-groom-sherwani-thumb.webp",
+      "originalSizeKB": 382,
+      "webpSizeKB": 382,
+      "thumbnailSizeKB": 63
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala.jpg",
+      "webp": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala-thumb.webp",
+      "originalSizeKB": 2059,
+      "webpSizeKB": 125,
+      "thumbnailSizeKB": 47
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala.webp",
+      "webp": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-raw-silk-bandhgala-thumb.webp",
+      "originalSizeKB": 125,
+      "webpSizeKB": 125,
+      "thumbnailSizeKB": 47
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-wedding-stole.jpg",
+      "webp": "\\client\\public\\images\\products\\ivory-wedding-stole.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-wedding-stole-thumb.webp",
+      "originalSizeKB": 1723,
+      "webpSizeKB": 55,
+      "thumbnailSizeKB": 23
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ivory-wedding-stole.webp",
+      "webp": "\\client\\public\\images\\products\\ivory-wedding-stole.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ivory-wedding-stole-thumb.webp",
+      "originalSizeKB": 55,
+      "webpSizeKB": 55,
+      "thumbnailSizeKB": 23
+    },
+    {
+      "original": "\\client\\public\\images\\products\\maroon-groom-sherwani.jpg",
+      "webp": "\\client\\public\\images\\products\\maroon-groom-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\maroon-groom-sherwani-thumb.webp",
+      "originalSizeKB": 3049,
+      "webpSizeKB": 172,
+      "thumbnailSizeKB": 75
+    },
+    {
+      "original": "\\client\\public\\images\\products\\maroon-groom-sherwani.webp",
+      "webp": "\\client\\public\\images\\products\\maroon-groom-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\maroon-groom-sherwani-thumb.webp",
+      "originalSizeKB": 172,
+      "webpSizeKB": 172,
+      "thumbnailSizeKB": 75
+    },
+    {
+      "original": "\\client\\public\\images\\products\\midnight-groom-jodhpuri.jpg",
+      "webp": "\\client\\public\\images\\products\\midnight-groom-jodhpuri.webp",
+      "thumbnail": "\\client\\public\\images\\products\\midnight-groom-jodhpuri-thumb.webp",
+      "originalSizeKB": 2918,
+      "webpSizeKB": 95,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\midnight-groom-jodhpuri.webp",
+      "webp": "\\client\\public\\images\\products\\midnight-groom-jodhpuri.webp",
+      "thumbnail": "\\client\\public\\images\\products\\midnight-groom-jodhpuri-thumb.webp",
+      "originalSizeKB": 95,
+      "webpSizeKB": 95,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\midnight-tuxedo.jpg",
+      "webp": "\\client\\public\\images\\products\\midnight-tuxedo.webp",
+      "thumbnail": "\\client\\public\\images\\products\\midnight-tuxedo-thumb.webp",
+      "originalSizeKB": 3403,
+      "webpSizeKB": 281,
+      "thumbnailSizeKB": 100
+    },
+    {
+      "original": "\\client\\public\\images\\products\\midnight-tuxedo.webp",
+      "webp": "\\client\\public\\images\\products\\midnight-tuxedo.webp",
+      "thumbnail": "\\client\\public\\images\\products\\midnight-tuxedo-thumb.webp",
+      "originalSizeKB": 281,
+      "webpSizeKB": 281,
+      "thumbnailSizeKB": 100
+    },
+    {
+      "original": "\\client\\public\\images\\products\\navy-festive-bandhgala.jpg",
+      "webp": "\\client\\public\\images\\products\\navy-festive-bandhgala.webp",
+      "thumbnail": "\\client\\public\\images\\products\\navy-festive-bandhgala-thumb.webp",
+      "originalSizeKB": 2858,
+      "webpSizeKB": 230,
+      "thumbnailSizeKB": 88
+    },
+    {
+      "original": "\\client\\public\\images\\products\\navy-festive-bandhgala.webp",
+      "webp": "\\client\\public\\images\\products\\navy-festive-bandhgala.webp",
+      "thumbnail": "\\client\\public\\images\\products\\navy-festive-bandhgala-thumb.webp",
+      "originalSizeKB": 230,
+      "webpSizeKB": 230,
+      "thumbnailSizeKB": 88
+    },
+    {
+      "original": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set.jpg",
+      "webp": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set-thumb.webp",
+      "originalSizeKB": 1550,
+      "webpSizeKB": 1550,
+      "thumbnailSizeKB": 1550
+    },
+    {
+      "original": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set.webp",
+      "webp": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\oat-silk-kurta-jacket-set-thumb.webp",
+      "originalSizeKB": 1550,
+      "webpSizeKB": 1550,
+      "thumbnailSizeKB": 1550
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ochre-kurta-pajama.jpg",
+      "webp": "\\client\\public\\images\\products\\ochre-kurta-pajama.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ochre-kurta-pajama-thumb.webp",
+      "originalSizeKB": 2540,
+      "webpSizeKB": 2540,
+      "thumbnailSizeKB": 2540
+    },
+    {
+      "original": "\\client\\public\\images\\products\\ochre-kurta-pajama.webp",
+      "webp": "\\client\\public\\images\\products\\ochre-kurta-pajama.webp",
+      "thumbnail": "\\client\\public\\images\\products\\ochre-kurta-pajama-thumb.webp",
+      "originalSizeKB": 2540,
+      "webpSizeKB": 2540,
+      "thumbnailSizeKB": 2540
+    },
+    {
+      "original": "\\client\\public\\images\\products\\olive-three-piece-suit.jpg",
+      "webp": "\\client\\public\\images\\products\\olive-three-piece-suit.webp",
+      "thumbnail": "\\client\\public\\images\\products\\olive-three-piece-suit-thumb.webp",
+      "originalSizeKB": 2841,
+      "webpSizeKB": 133,
+      "thumbnailSizeKB": 60
+    },
+    {
+      "original": "\\client\\public\\images\\products\\olive-three-piece-suit.webp",
+      "webp": "\\client\\public\\images\\products\\olive-three-piece-suit.webp",
+      "thumbnail": "\\client\\public\\images\\products\\olive-three-piece-suit-thumb.webp",
+      "originalSizeKB": 133,
+      "webpSizeKB": 133,
+      "thumbnailSizeKB": 60
+    },
+    {
+      "original": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta-thumb.webp",
+      "originalSizeKB": 3898,
+      "webpSizeKB": 241,
+      "thumbnailSizeKB": 41
+    },
+    {
+      "original": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\red-yellow-bandhani-kurta-thumb.webp",
+      "originalSizeKB": 241,
+      "webpSizeKB": 241,
+      "thumbnailSizeKB": 41
+    },
+    {
+      "original": "\\client\\public\\images\\products\\rust-orange-silk-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\rust-orange-silk-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\rust-orange-silk-kurta-thumb.webp",
+      "originalSizeKB": 1503,
+      "webpSizeKB": 1503,
+      "thumbnailSizeKB": 1503
+    },
+    {
+      "original": "\\client\\public\\images\\products\\rust-orange-silk-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\rust-orange-silk-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\rust-orange-silk-kurta-thumb.webp",
+      "originalSizeKB": 1503,
+      "webpSizeKB": 1503,
+      "thumbnailSizeKB": 1503
+    },
+    {
+      "original": "\\client\\public\\images\\products\\rust-silk-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\rust-silk-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\rust-silk-kurta-thumb.webp",
+      "originalSizeKB": 101,
+      "webpSizeKB": 47,
+      "thumbnailSizeKB": 23
+    },
+    {
+      "original": "\\client\\public\\images\\products\\rust-silk-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\rust-silk-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\rust-silk-kurta-thumb.webp",
+      "originalSizeKB": 47,
+      "webpSizeKB": 47,
+      "thumbnailSizeKB": 23
+    },
+    {
+      "original": "\\client\\public\\images\\products\\saffron-festive-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\saffron-festive-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\saffron-festive-kurta-thumb.webp",
+      "originalSizeKB": 1975,
+      "webpSizeKB": 126,
+      "thumbnailSizeKB": 52
+    },
+    {
+      "original": "\\client\\public\\images\\products\\saffron-festive-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\saffron-festive-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\saffron-festive-kurta-thumb.webp",
+      "originalSizeKB": 126,
+      "webpSizeKB": 126,
+      "thumbnailSizeKB": 52
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sage-short-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\sage-short-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sage-short-kurta-thumb.webp",
+      "originalSizeKB": 4119,
+      "webpSizeKB": 177,
+      "thumbnailSizeKB": 39
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sage-short-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\sage-short-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sage-short-kurta-thumb.webp",
+      "originalSizeKB": 177,
+      "webpSizeKB": 177,
+      "thumbnailSizeKB": 39
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat.jpg",
+      "webp": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat-thumb.webp",
+      "originalSizeKB": 2320,
+      "webpSizeKB": 106,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat.webp",
+      "webp": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sand-groomsmen-waistcoat-thumb.webp",
+      "originalSizeKB": 106,
+      "webpSizeKB": 106,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sand-linen-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\sand-linen-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sand-linen-kurta-thumb.webp",
+      "originalSizeKB": 1843,
+      "webpSizeKB": 109,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\sand-linen-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\sand-linen-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\sand-linen-kurta-thumb.webp",
+      "originalSizeKB": 109,
+      "webpSizeKB": 109,
+      "thumbnailSizeKB": 43
+    },
+    {
+      "original": "\\client\\public\\images\\products\\stone-travel-blazer.jpg",
+      "webp": "\\client\\public\\images\\products\\stone-travel-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\stone-travel-blazer-thumb.webp",
+      "originalSizeKB": 2473,
+      "webpSizeKB": 168,
+      "thumbnailSizeKB": 71
+    },
+    {
+      "original": "\\client\\public\\images\\products\\stone-travel-blazer.webp",
+      "webp": "\\client\\public\\images\\products\\stone-travel-blazer.webp",
+      "thumbnail": "\\client\\public\\images\\products\\stone-travel-blazer-thumb.webp",
+      "originalSizeKB": 168,
+      "webpSizeKB": 168,
+      "thumbnailSizeKB": 71
+    },
+    {
+      "original": "\\client\\public\\images\\products\\terracotta-sangeet-set.jpg",
+      "webp": "\\client\\public\\images\\products\\terracotta-sangeet-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\terracotta-sangeet-set-thumb.webp",
+      "originalSizeKB": 2157,
+      "webpSizeKB": 86,
+      "thumbnailSizeKB": 34
+    },
+    {
+      "original": "\\client\\public\\images\\products\\terracotta-sangeet-set.webp",
+      "webp": "\\client\\public\\images\\products\\terracotta-sangeet-set.webp",
+      "thumbnail": "\\client\\public\\images\\products\\terracotta-sangeet-set-thumb.webp",
+      "originalSizeKB": 86,
+      "webpSizeKB": 86,
+      "thumbnailSizeKB": 34
+    },
+    {
+      "original": "\\client\\public\\images\\products\\white-chikankari-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\white-chikankari-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\white-chikankari-kurta-thumb.webp",
+      "originalSizeKB": 2443,
+      "webpSizeKB": 2443,
+      "thumbnailSizeKB": 2443
+    },
+    {
+      "original": "\\client\\public\\images\\products\\white-chikankari-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\white-chikankari-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\white-chikankari-kurta-thumb.webp",
+      "originalSizeKB": 2443,
+      "webpSizeKB": 2443,
+      "thumbnailSizeKB": 2443
+    },
+    {
+      "original": "\\client\\public\\images\\products\\white-cotton-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\white-cotton-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\white-cotton-kurta-thumb.webp",
+      "originalSizeKB": 3213,
+      "webpSizeKB": 236,
+      "thumbnailSizeKB": 104
+    },
+    {
+      "original": "\\client\\public\\images\\products\\white-cotton-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\white-cotton-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\white-cotton-kurta-thumb.webp",
+      "originalSizeKB": 236,
+      "webpSizeKB": 236,
+      "thumbnailSizeKB": 104
+    },
+    {
+      "original": "\\client\\public\\images\\products\\wine-embroidered-sherwani.jpg",
+      "webp": "\\client\\public\\images\\products\\wine-embroidered-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\wine-embroidered-sherwani-thumb.webp",
+      "originalSizeKB": 2046,
+      "webpSizeKB": 90,
+      "thumbnailSizeKB": 29
+    },
+    {
+      "original": "\\client\\public\\images\\products\\wine-embroidered-sherwani.webp",
+      "webp": "\\client\\public\\images\\products\\wine-embroidered-sherwani.webp",
+      "thumbnail": "\\client\\public\\images\\products\\wine-embroidered-sherwani-thumb.webp",
+      "originalSizeKB": 90,
+      "webpSizeKB": 90,
+      "thumbnailSizeKB": 29
+    },
+    {
+      "original": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta.jpg",
+      "webp": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta-thumb.webp",
+      "originalSizeKB": 1860,
+      "webpSizeKB": 117,
+      "thumbnailSizeKB": 46
+    },
+    {
+      "original": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta.webp",
+      "webp": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta.webp",
+      "thumbnail": "\\client\\public\\images\\products\\yellow-embroidered-festive-kurta-thumb.webp",
+      "originalSizeKB": 117,
+      "webpSizeKB": 117,
+      "thumbnailSizeKB": 46
+    }
+  ]
+}
