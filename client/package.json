@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && tsc -b && vite build",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/check-assets.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.mjs",

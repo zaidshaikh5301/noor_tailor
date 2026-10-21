@@ -4,7 +4,8 @@
   "workspaces": ["client"],
   "scripts": {
     "dev": "npm run dev --workspace client",
-    "build": "npm run build --workspace client",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/check-assets.mjs",
     "lint": "npm run lint --workspace client",
     "typecheck": "tsc -b client/tsconfig.json"
   }
