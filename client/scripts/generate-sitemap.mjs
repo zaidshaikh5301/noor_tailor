@@ -1,65 +1,75 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { products } from '../src/data/products.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
-const PUBLIC_DIR = path.join(PROJECT_ROOT, 'client', 'public');
-const BASE_URL = 'https://noortailor.netlify.app';
+
+const BASE = 'https://noortailor.netlify.app';
+const TODAY = '2026-10-21';
 
 const staticRoutes = [
-  '',
-  '/shop',
-  '/shop/wedding',
-  '/shop/suits',
-  '/shop/kurtas',
-  '/shop/indo-western',
-  '/shop/festive',
-  '/tailoring',
-  '/about',
-  '/contact',
-  '/faq',
-  '/shipping',
-  '/privacy',
-  '/terms',
-  '/size-guide',
-  '/wishlist',
-  '/cart',
-  '/checkout',
+  { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/shop', priority: '0.8', changefreq: 'weekly' },
+  { path: '/shop/wedding', priority: '0.8', changefreq: 'weekly' },
+  { path: '/shop/suits', priority: '0.8', changefreq: 'weekly' },
+  { path: '/shop/kurtas', priority: '0.8', changefreq: 'weekly' },
+  { path: '/shop/indo-western', priority: '0.8', changefreq: 'weekly' },
+  { path: '/shop/festive', priority: '0.8', changefreq: 'weekly' },
+  { path: '/tailoring', priority: '0.8', changefreq: 'weekly' },
+  { path: '/about', priority: '0.8', changefreq: 'monthly' },
+  { path: '/contact', priority: '0.8', changefreq: 'monthly' },
+  { path: '/faq', priority: '0.8', changefreq: 'monthly' },
+  { path: '/shipping', priority: '0.8', changefreq: 'monthly' },
+  { path: '/privacy', priority: '0.5', changefreq: 'monthly' },
+  { path: '/terms', priority: '0.5', changefreq: 'monthly' },
+  { path: '/size-guide', priority: '0.6', changefreq: 'monthly' },
 ];
 
-function generateSitemap() {
-  const today = new Date().toISOString().split('T')[0];
-  
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
-  // Static routes
-  for (const route of staticRoutes) {
-    xml += '  <url>\n';
-    xml += `    <loc>${BASE_URL}${route}</loc>\n`;
-    xml += `    <lastmod>${today}</lastmod>\n`;
-    xml += '    <changefreq>weekly</changefreq>\n';
-    xml += route === '' ? '    <priority>1.0</priority>\n' : '    <priority>0.8</priority>\n';
-    xml += '  </url>\n';
-  }
-  
-  // Product routes
-  for (const product of products) {
-    xml += '  <url>\n';
-    xml += `    <loc>${BASE_URL}/product/${product.slug}</loc>\n`;
-    xml += `    <lastmod>${today}</lastmod>\n`;
-    xml += '    <changefreq>monthly</changefreq>\n';
-    xml += '    <priority>0.9</priority>\n';
-    xml += '  </url>\n';
-  }
-  
-  xml += '</urlset>\n';
-  
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml);
-  console.log(`Sitemap generated with ${staticRoutes.length + products.length} URLs`);
+// Product slugs sourced from client/src/data/products.ts
+const productSlugs = [
+  'ivory-raw-silk-bandhgala','midnight-tuxedo','sand-linen-kurta','forest-nehru-jacket',
+  'black-jodhpuri-set','wine-embroidered-sherwani','sage-short-kurta','cream-asymmetric-kurta',
+  'cobalt-bandhgala-blazer','olive-three-piece-suit','stone-travel-blazer','black-formal-trouser',
+  'white-cotton-kurta','indigo-pathani-set','rust-silk-kurta','cream-cape-kurta',
+  'black-kurta-jacket','blue-asymmetric-set','maroon-groom-sherwani','sand-groomsmen-waistcoat',
+  'midnight-groom-jodhpuri','ivory-wedding-stole','saffron-festive-kurta','navy-festive-bandhgala',
+  'ecru-puja-kurta','terracotta-sangeet-set','ivory-pearl-groom-sherwani','emerald-velvet-jodhpuri',
+  'yellow-embroidered-festive-kurta','red-yellow-bandhani-kurta','img-4126','img-4128','img-4138',
+  'img-4141','img-4192','img-4472','img-4473','img-4923','img-5002','img-5124','img-5132',
+  'img-5145','img-5214',
+];
+
+function escapeXml(s) {
+  return String(s).replace(/[<>&'"]/g, (c) => ({
+    '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;',
+  }[c]));
 }
 
-generateSitemap();
+const urls = [];
+for (const r of staticRoutes) {
+  urls.push(`  <url>
+    <loc>${escapeXml(BASE + r.path)}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`);
+}
+for (const slug of productSlugs) {
+  urls.push(`  <url>
+    <loc>${escapeXml(BASE + '/product/' + slug)}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>`);
+}
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`;
+
+const outPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+fs.writeFileSync(outPath, xml, 'utf8');
+console.log(`Wrote ${outPath} with ${urls.length} URLs`);
