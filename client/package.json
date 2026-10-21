@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "node scripts/check-assets.mjs",
+   "postbuild": "node scripts/check-assets.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.mjs",
