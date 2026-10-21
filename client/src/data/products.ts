@@ -119,7 +119,7 @@ export const products: Product[] = [
   make(
     "sage-short-kurta",
     "Ivory Heirloom Embroidered Sherwani",
-    "Wedding",
+    "Wedding", 
     "Sherwani set",
     34999,
     "Silk blend with thread and sequin embroidery",
