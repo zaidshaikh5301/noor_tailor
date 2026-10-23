@@ -51,11 +51,11 @@ export const products: Product[] = [
     { fresh: true, best: true },
   ),
   make(
-    "midnight-tuxedo",
+    "monochrome-abstract-print-shirt",
     "Monochrome Abstract Print Shirt",
     "Shirts",
     "Printed shirt",
-    1899, //
+    1899, 
     "Cotton blend",
     "White & Black",
     "#f2f0ee",
@@ -64,7 +64,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "sand-linen-kurta",
+    "blush-embroidered-jacket-set",
     "Blush Embroidered Jacket Set",
     "Indo-Western",
     "Jacket kurta set",
@@ -77,7 +77,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "forest-nehru-jacket",
+    "cream-gold-embroidered-bandhgala-jacket",
     "Cream Gold-Embroidered Bandhgala Jacket",
     "Indo-Western",
     "Bandhgala jacket",
@@ -90,7 +90,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "black-jodhpuri-set",
+    "black-asymmetric-textured-sherwani",
     "Black Asymmetric Textured Sherwani",
     "Indo-Western",
     "Asymmetric sherwani",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "wine-embroidered-sherwani",
+    "rose-jacquard-jacket-set",
     "Rose Jacquard Jacket Set",
     "Indo-Western",
     "Jacket kurta set",
@@ -117,7 +117,7 @@ export const products: Product[] = [
   ),
 
   make(
-    "sage-short-kurta",
+    "ivory-heirloom-embroidered-sherwani",
     "Ivory Heirloom Embroidered Sherwani",
     "Wedding", 
     "Sherwani set",
@@ -130,7 +130,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "cream-asymmetric-kurta",
+    "natural-linen-pocket-kurta-set",
     "Natural Linen Pocket Kurta Set",
     "Kurtas",
     "Kurta with relaxed trousers",
@@ -143,7 +143,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "cobalt-bandhgala-blazer",
+    "marigold-yellow-textured-kurta",
     "Marigold Yellow Textured Kurta",
     "Kurtas",
     "Kurta-pajama",
@@ -157,7 +157,7 @@ export const products: Product[] = [
   ),
 
   make(
-    "olive-three-piece-suit",
+    "ivory-pathani-kurta-set",
     "Ivory Pathani Kurta Set",
     "Kurtas",
     "Pathani kurta-salwar",
@@ -170,7 +170,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "stone-travel-blazer",
+    "dusty-rose-floral-embroidered-kurta-set",
     "Dusty Rose Floral Embroidered Kurta Set",
     "Kurtas",
     "Kurta set with embroidered shrug",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "black-formal-trouser",
+    "ivory-ganesha-motif-kurta-set",
     "Ivory Ganesha Motif Kurta Set",
     "Kurtas",
     "Kurta-pajama",
@@ -196,7 +196,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "white-cotton-kurta",
+    "black-contrast-stitch-pathani-set",
     "Black Contrast-Stitch Pathani Set",
     "Kurtas",
     "Pathani kurta with trousers",
@@ -209,7 +209,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "indigo-pathani-set",
+    "off-white-linen-kurta-set",
     "Off-White Linen Kurta Set",
     "Kurtas",
     "Kurta with trousers",
@@ -222,7 +222,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "rust-silk-kurta",
+    "sage-sequin-kurta-set",
     "Sage Sequin Kurta Set",
     "Kurtas",
     "Kurta-pajama",
@@ -235,7 +235,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "cream-cape-kurta",
+    "cream-mirror-work-short-kurta",
     "Cream Mirror Work Short Kurta",
     "Kurtas",
     "Kurta with trousers",
@@ -248,7 +248,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "black-kurta-jacket",
+    "white-double-breasted-blazer",
     "White Double-Breasted Blazer",
     "Suits",
     "Double-breasted blazer",
@@ -261,7 +261,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "blue-asymmetric-set",
+    "powder-blue-three-piece-suit",
     "Powder Blue Three-Piece Suit",
     "Suits",
     "Three-piece suit",
@@ -274,7 +274,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "maroon-groom-sherwani",
+    "ivory-heritage-sherwani-with-red-velvet-stole",
     "Ivory Heritage Sherwani with Red Velvet Stole",
     "Wedding",
     "Sherwani set",
@@ -287,7 +287,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "sand-groomsmen-waistcoat",
+    "navy-classic-pathani-kurta-set",
     "Navy Classic Pathani Kurta Set",
     "Kurtas",
     "Pathani kurta-pajama",
@@ -300,7 +300,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "midnight-groom-jodhpuri",
+    "black-velvet-embroidered-jodhpuri-suit",
     "Black Velvet Embroidered Jodhpuri Suit",
     "Indo-Western",
     "Jodhpuri suit",
@@ -313,7 +313,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "ivory-wedding-stole",
+    "black-silver-embroidered-jodhpuri-jacket",
     "Black Silver-Embroidered Jodhpuri Jacket",
     "Indo-Western",
     "Jodhpuri jacket",
@@ -326,7 +326,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "saffron-festive-kurta",
+    "mustard-heritage-print-bandhgala-set",
     "Mustard Heritage Print Bandhgala Set",
     "Indo-Western",
     "Bandhgala jacket with trousers",
@@ -339,7 +339,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "navy-festive-bandhgala",
+    "black-heritage-embroidered-jodhpuri-jacket",
     "Black Heritage Embroidered Jodhpuri Jacket",
     "Indo-Western",
     "Jodhpuri jacket",
@@ -352,7 +352,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "ecru-puja-kurta",
+    "navy-textured-two-button-blazer",
     "Navy Textured Two-Button Blazer",
     "Suits",
     "Blazer",
@@ -365,7 +365,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "terracotta-sangeet-set",
+    "mocha-hand-stitch-pathani-set",
     "Mocha Hand-Stitch Pathani Set",
     "Kurtas",
     "Pathani kurta with trousers",
@@ -379,7 +379,7 @@ export const products: Product[] = [
   ),
 
   make(
-    "ivory-pearl-groom-sherwani",
+    "navy-lion-crest-jodhpuri-suit",
     "Navy Lion Crest Jodhpuri Suit",
     "Indo-Western",
     "Jodhpuri suit",
@@ -392,7 +392,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "emerald-velvet-jodhpuri",
+    "black-floral-embroidered-short-kurta",
     "Black Floral Embroidered Short Kurta",
     "Kurtas",
     "Kurta with trousers",
@@ -405,7 +405,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "yellow-embroidered-festive-kurta",
+    "pistachio-green-two-piece-suit",
     "Pistachio Green Two-Piece Suit",
     "Suits",
     "Two-piece suit",
@@ -418,7 +418,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "red-yellow-bandhani-kurta",
+    "ivory-motif-embroidered-sherwani-with-stole",
     "Ivory Motif Embroidered Sherwani with Stole",
     "Wedding",
     "Sherwani set",
@@ -431,7 +431,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4126",
+    "ivory-royal-elephant-jodhpuri-jacket",
     "Ivory Royal Elephant Jodhpuri Jacket",
     "Indo-Western",
     "Jodhpuri jacket",
@@ -444,7 +444,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4128",
+    "black-embroidered-kids-kurta-set",
     "Black Embroidered Kids Kurta Set",
     "Kids",
     "Kurta-pajama",
@@ -457,7 +457,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4138",
+    "ivory-gold-crest-jodhpuri-jacket",
     "Ivory Gold Crest Jodhpuri Jacket",
     "Indo-Western",
     "Jodhpuri jacket",
@@ -470,7 +470,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4141",
+    "cream-paisley-jacquard-sherwani",
     "Cream Paisley Jacquard Sherwani",
     "Wedding",
     "Sherwani",
@@ -483,7 +483,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4192",
+    "black-pinstripe-formal-shirt",
     "Black Pinstripe Formal Shirt",
     "Shirts",
     "Formal shirt",
@@ -496,7 +496,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4472",
+    "ivory-architectural-embroidered-sherwani",
     "Ivory Architectural Embroidered Sherwani",
     "Wedding",
     "Sherwani",
@@ -509,7 +509,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4473",
+    "mocha-double-breasted-blazer",
     "Mocha Double-Breasted Blazer",
     "Suits",
     "Double-breasted blazer",
@@ -522,7 +522,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-4923",
+    "rust-terracotta-bandhgala-jacket",
     "Rust Terracotta Bandhgala Jacket",
     "Indo-Western",
     "Bandhgala jacket",
@@ -535,7 +535,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-5002",
+    "white-floral-embroidered-short-kurta",
     "White Floral Embroidered Short Kurta",
     "Kurtas",
     "Kurta with trousers",
@@ -548,7 +548,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-5124",
+    "chocolate-brown-contrast-piped-suit",
     "Chocolate Brown Contrast-Piped Suit",
     "Suits",
     "Two-piece suit",
@@ -561,7 +561,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-5132",
+    "white-notch-neck-kurta-set",
     "White Notch-Neck Kurta Set",
     "Kurtas",
     "Kurta with pajama",
@@ -574,7 +574,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-5145",
+    "cream-angrakha-kurta-set-with-green-brocade-stole",
     "Cream Angrakha Kurta Set with Green Brocade Stole",
     "Wedding",
     "Angrakha kurta set",
@@ -587,7 +587,7 @@ export const products: Product[] = [
     { fresh: true },
   ),
   make(
-    "img-5214",
+    "navy-textured-nehru-jacket",
     "Navy Textured Nehru Jacket",
     "Indo-Western",
     "Nehru jacket",

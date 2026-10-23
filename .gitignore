@@ -39,6 +39,4 @@ client/public/images/products/_originals/
 client/public/images/products/_incoming/
 
 # Generated files
-client/public/sitemap.xml
 client/public/images/optimization-manifest.json
-client/public/og-image.jpg
