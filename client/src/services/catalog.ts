@@ -61,10 +61,10 @@ export async function getFaqs(): Promise<Faq[]> {
 }
 
 export const editorialImages = {
-  groom: '/images/products/ivory-pearl-groom-sherwani.jpg',
+  groom: '/images/products/navy-lion-crest-jodhpuri-suit.jpg',
   kurtas: '/images/products/natural-linen-pocket-kurta-set.jpg',
   lookbookGroom: '/images/products/ivory-raw-silk-bandhgala.jpg',
-  tailoring: '/images/products/stone-travel-blazer.jpg',
+  tailoring: '/images/products/dusty-rose-floral-embroidered-kurta-set.jpg',
   featureWedding: productPhotos['ivory-heritage-sherwani-with-red-velvet-stole'].src,
   lookbookEvening: productPhotos['deep-green-festive-blazer'].src,
 };
